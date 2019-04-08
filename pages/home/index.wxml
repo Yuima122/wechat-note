@@ -1,0 +1,14 @@
+<view class="container">
+    <view class="date">
+        <view class="day">
+            {{day}}
+        </view>
+        <view class="month">
+            {{month}}
+        </view>
+    </view>
+    <button class="create-btn" bindtap="create">
+        <text class="create-text" wx:if="{{firstCreate}}">创建第一个活动</text>
+        <text class="create-text" wx:else>创建新的活动</text>
+    </button>
+</view>

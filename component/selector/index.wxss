@@ -1,0 +1,62 @@
+/* component/selector/index.wxss */
+.container{
+    display: flex;
+    align-items: center;
+    width: 238rpx;
+    height: 80rpx;
+    border-radius: 8rpx;
+    border: solid 4rpx rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+.frequency{
+    position: relative;
+    left: 34rpx;
+    width: 172.6rpx;
+    height: 52rpx;
+    font-family: PingFang SC;
+    font-size: 36rpx;
+    font-weight: bold;
+    color: rgba(23, 23, 23, 0.75);
+}
+.selecte-frequency{
+    position: relative;
+    left: 34rpx;
+    bottom: -7rpx;
+    width: 172.6rpx;
+    font-family: PingFang SC;
+    font-size: 36rpx;
+    font-weight: bold;
+    color: rgba(23, 23, 23, 0.75);
+}
+.frequency-margin{
+    margin-bottom: 28rpx;
+}
+.selectorAnimation{
+    border-radius: 8rpx;
+    box-shadow: 0 16rpx 20rpx 0 rgba(0, 0, 0, 0.2);
+    border: solid 4rpx rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    animation: selectorTrans 0.5s;
+    animation-fill-mode: forwards;
+}
+.selecte-icon{
+    position: absolute;
+    right: 20rpx;
+    width: 28rpx;
+    height: 26rpx;
+}
+.selected-icon{
+    position: relative;
+    left: 20rpx;
+    bottom: 6rpx;
+    width: 26rpx;
+    height: 18rpx;
+}
+@keyframes selectorTrans {
+    from {
+        height: 80rpx;
+    }
+    to {
+        height: 242rpx;
+    }
+}

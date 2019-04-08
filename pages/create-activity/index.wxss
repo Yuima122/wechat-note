@@ -1,0 +1,43 @@
+/* pages/create-activity/index.wxss */
+page{
+    width: 100%;
+    height: 100%;
+}
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.input{
+    position: absolute;
+    top: 46rpx;
+    width: 670rpx;
+    height: 96rpx;
+    border-radius: 16rpx;
+    background-color: #f6f6f4;
+}
+.frequency-text{
+    position: absolute;
+    top: 172rpx;
+    left: 70rpx;
+    width: 124rpx;
+    height: 38rpx;
+    font-family: PingFang SC;
+    font-size: 28rpx;
+    font-weight: 500;
+    color: #c1c1c1;
+}
+.finish{
+    position: absolute;
+    top: 630rpx;
+    width: 268px;
+    height: 48px;
+    border-radius: 8px;
+    box-shadow: 0 8px 18px 0 rgba(214, 86, 46, 0.2);
+    background-color: #fdd32a;
+}
+.selector{
+    position: absolute;
+    top: 232rpx;
+    left: 40rpx;
+}

@@ -1,0 +1,10 @@
+<view class="container">
+    <input class="input" placeholder=" 输入活动名称"  bindinput='watchInput'/>
+    <view class="frequency-text">
+        <text>活动频率:</text>
+    </view>
+    <selector class="selector" bind:selectFrequency="selectFrequency"></selector>
+    <button class="finish" bindtap="sendCreate">
+        <text>完成创建</text>
+    </button>
+</view>
