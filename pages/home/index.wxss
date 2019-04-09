@@ -12,7 +12,7 @@ page{
 }
 .date{
     position: absolute;
-    top: 70rpx;
+    top: 38rpx;
     width: 100%;
     display: flex;
     align-items: center;
@@ -50,4 +50,8 @@ page{
     text-align: center;
     font-weight: bold;
     color: rgba(0, 0, 0, 0.75);
+}
+.activity-card-container{
+    position: absolute;
+    top: 306rpx;
 }

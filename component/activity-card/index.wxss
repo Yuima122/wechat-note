@@ -1,0 +1,70 @@
+/* component/activity-card/index.wxss */
+.container{
+    position: relative;
+    width: 670rpx;
+    height: 240rpx;
+    border-radius: 16rpx;
+    box-shadow: 0 16rpx 36rpx 0 rgba(214, 86, 46, 0.2);
+    background-color: #ffffff;
+    margin-bottom: 60rpx;
+}
+.checkbox-container{
+    position: absolute;
+    top: 30rpx;
+    left: 34rpx;
+}
+.checkbox{
+    width: 48rpx;
+    height: 48rpx;
+}
+.name-container{
+    position: absolute;
+    width: 368rpx;
+    top: 22rpx;
+    left: 116rpx;
+    font-family: PingFang SC;
+    font-size: 36rpx;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.75);
+}
+.frequency-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 30rpx;
+    right: 44rpx;
+    width: 100rpx;
+    height: 48rpx;
+    border-radius: 10rpx;
+    background-color: #fff6d4;
+    font-family: SFCompactDisplay;
+    font-size: 24rpx;
+    font-weight: 600;
+    color: #f5ad2d;
+}
+.groups-container{
+    position: absolute;
+    display: flex;
+    top: 154rpx;
+    left: 30rpx;
+}
+.profile{
+    width: 56rpx;
+    height: 56rpx;
+    border-radius: 50%;
+    margin-right: 30rpx;
+}
+.invite-icon{
+    width: 56rpx;
+    height: 56rpx;
+}
+.menu-container{
+    position: absolute;
+    top: 162rpx;
+    right: 44rpx;
+}
+.menu{
+    width: 8rpx;
+    height: 40rpx;
+}

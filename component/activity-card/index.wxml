@@ -1,0 +1,21 @@
+<view class="container">
+    <view class="checkbox-container">
+        <image bindtap="finshActivity" class="checkbox" src="../../assets/checkbox_1.png" wx:if="{{!checked}}"></image>
+        <image bindtap="finshActivity" class="checkbox" src="../../assets/checkbox_2.png" wx:else></image>
+    </view>
+    <view class="name-container">
+        <text>{{name}}</text>
+    </view>
+    <view class="frequency-container">
+        <text>NO.{{frequency}}</text>
+    </view>
+    <view class="groups-container">
+        <view wx:for="{{groupsUrl}}" wx:key="{{item}}">
+            <image src="{{item}}" class="profile"></image>
+        </view>
+       <image class="invite-icon" src="../../assets/invite.png"></image>
+    </view>
+    <view class="menu-container">
+        <image class="menu" src="../../assets/menu.png"></image>
+    </view>
+</view>

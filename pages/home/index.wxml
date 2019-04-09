@@ -7,8 +7,14 @@
             {{month}}
         </view>
     </view>
-    <button class="create-btn" bindtap="create">
-        <text class="create-text" wx:if="{{firstCreate}}">创建第一个活动</text>
-        <text class="create-text" wx:else>创建新的活动</text>
+    <!--如果用户拥有活动，则显示对应的卡片-->
+    <view class="activity-card-container">
+        <view wx:for="{{activities}}" wx:key="{{item}}">
+            <activity-card name="{{item.name}}" checked="{{item.checked}}" frequency="{{item.frequency}}"
+                           groupsUrl="{{item.groupsUrl}}" index="{{index}}" bind:checkActivity="checkActivity"></activity-card>
+        </view>
+    </view>
+    <button class="create-btn" bindtap="create" wx:if="{{firstCreate}}">
+        <text class="create-text">创建第一个活动</text>
     </button>
 </view>
