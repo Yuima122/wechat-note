@@ -7,7 +7,7 @@ Page({
     data: {
         day: '',
         month: '',
-        firstCreate: false,
+        firstCreate: true,
         activities: []
     },
 
