@@ -16,6 +16,23 @@ page{
     border-radius: 16rpx;
     background-color: #f6f6f4;
 }
+.error-input{
+    border: solid 4rpx #f56f6f;
+}
+.error-placeholder{
+    font-family: PingFang SC;
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #f56f6f;
+}
+.error-icon{
+    position: absolute;
+    top: 76rpx;
+    left: 644rpx;
+    width: 36rpx;
+    height: 36rpx;
+    z-index: 1;
+}
 .frequency-text{
     position: absolute;
     top: 172rpx;

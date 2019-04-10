@@ -1,5 +1,7 @@
 <view class="container">
-    <input class="input" placeholder=" 输入活动名称"  bindinput='watchInput'/>
+    <input class="input {{showError ? 'error-input' : ''}}" placeholder="{{showError ? ' 还没有输入活动名称哦' : ' 输入活动名称'}}" bindinput='watchInput'
+           placeholder-class="{{showError ? 'error-placeholder' : ''}}" bindfocus="cancleError"/>
+    <image src="../../assets/error.png" class="error-icon" wx:if="{{showError}}"></image>
     <view class="frequency-text">
         <text>活动频率:</text>
     </view>

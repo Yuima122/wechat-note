@@ -1,1 +1,133 @@
 /* pages/log/index.wxss */
+page {
+    width: 100%;
+    height: 100%;
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.authorize-container{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 690rpx;
+    background-color: #ffffff;
+}
+.logo{
+    position: absolute;
+    top: 34rpx;
+    left: 36rpx;
+    width: 72rpx;
+    height: 72rpx;
+}
+.name-position{
+    position: absolute;
+    top: 42rpx;
+    left: 120rpx;
+}
+.name{
+    font-family: PingFang SC;
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #06070c;
+    margin-right: 10rpx;
+}
+.apply{
+    font-family: PingFang-SC;
+    font-size: 32rpx;
+    font-weight: normal;
+    color: #404040;
+}
+.title{
+    position: absolute;
+    top: 130rpx;
+    width: 740rpx;
+    left: 37rpx;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-family: PingFang SC;
+    font-size: 44rpx;
+    font-weight: bold;
+    color: #06070c;
+}
+.user-info-container{
+    position: absolute;
+    top: 230rpx;
+    left: 38rpx;
+    width: 674rpx;
+    height: 100rpx;
+    border: solid 1rpx #EBEBEB;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+.user-avatar{
+    position: absolute;
+    top: 11rpx;
+    left: 0;
+    width: 80rpx;
+    height: 80rpx;
+}
+.remark{
+    width: 278rpx;
+    height: 52rpx;
+    position: absolute;
+    left: 98rpx;
+    top: 6rpx;
+    font-family: PingFang SC;
+    font-size: 32rpx;
+    font-weight: bold;
+}
+.user-name{
+    width: 278rpx;
+    height: 55rpx;
+    position: absolute;
+    left: 98rpx;
+    top: 52rpx;
+    font-family: PingFang SC;
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #b3b3b3;
+}
+.user-icon{
+    position: absolute;
+    top: 32.2rpx;
+    right: 14.2rpx;
+    width: 28rpx;
+    height: 20.2px;
+}
+.cancel{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 434rpx;
+    left: 36rpx;
+    width: 320rpx;
+    height: 72rpx;
+    border-radius: 8rpx;
+    background-color: #ededed;
+    font-family: PingFang SC;
+    font-size: 32rpx;
+    font-weight: 900;
+    color: #000000;
+}
+.authorize{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 434rpx;
+    right: 36rpx;
+    width: 320rpx;
+    height: 72rpx;
+    background-color: #07c160;
+    border-radius: 8rpx;
+    font-family: PingFang SC;
+    font-size: 32rpx;
+    font-weight: 900;
+    color: #ffffff;
+}

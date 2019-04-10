@@ -29,6 +29,12 @@ Page({
         })
     },
 
+    cancleError() {
+       this.setData({
+           showError: false
+       })
+    },
+
     sendCreate() {
         if (this.data.name) {
             const message = {

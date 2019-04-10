@@ -6,7 +6,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-        canIUse: wx.canIUse('button.open-type.getUserInfo')
+        canIUse: wx.canIUse('button.open-type.getUserInfo'),
+        showPage: false
     },
 
     /**
@@ -15,7 +16,7 @@ Page({
     onLoad: function (options) {
         // 获取用户信息
         if(wx.getStorageSync('userInfo')) {
-            wx.navigateTo({
+            wx.redirectTo({
                 url: '../home/index'
             });
         } else {
@@ -27,7 +28,14 @@ Page({
                             success: res => {
                                 app.globalData.userInfo = res.userInfo;
                                 wx.setStorageSync('userInfo', res.userInfo);
+                                wx.redirectTo({
+                                    url: '../home/index'
+                                });
                             }
+                        })
+                    } else {
+                        this.setData({
+                            showPage: true
                         })
                     }
                 }
@@ -36,6 +44,22 @@ Page({
     },
 
     bindGetUserInfo(e) {
-        console.log(e.detail.userInfo)
+        wx.redirectTo({
+            url: '../home/index'
+        });
+    },
+
+    cancel() {
+        wx.showModal({
+            title:'警告',
+            content:'您点击了拒绝授权，将无法进入小程序，请授权之后再进入',
+            showCancel:false,
+            confirmText:'返回授权',
+            success:function(res){
+                if (res.confirm) {
+                    console.log('用户点击了“返回授权”')
+                }
+            }
+        })
     }
 })
