@@ -55,3 +55,16 @@ page{
     position: absolute;
     top: 306rpx;
 }
+.delete-toast-position{
+    position: fixed;
+    animation: toastAnimation 0.5s;
+    animation-fill-mode: forwards;
+}
+@keyframes toastAnimation {
+    from {
+        bottom: 0;
+    }
+    to {
+        bottom: 60rpx;
+    }
+}

@@ -60,6 +60,9 @@ Component({
         },
         showMenu() {
             this.triggerEvent('showMenu', true)
+        },
+        delete() {
+            this.triggerEvent('delete', true)
         }
     }
 })

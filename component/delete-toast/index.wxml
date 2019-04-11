@@ -1,0 +1,9 @@
+<view class="container">
+    <view class="toast-text">
+        <text>活动已删除~</text>
+    </view>
+    <view class="line"></view>
+    <view class="cancel">
+        <text>撤销</text>
+    </view>
+</view>

@@ -14,10 +14,14 @@
                            groupsUrl="{{item.groupsUrl}}" index="{{index}}" menuShow="{{menuShow}}"
                            showIndex="{{showIndex}}"
                            data-index="{{index}}"
-                           bind:checkActivity="checkActivity" bind:showMenu="showMenu"></activity-card>
+                           bind:checkActivity="checkActivity"
+                           bind:showMenu="showMenu"
+                           bind:delete="detele"></activity-card>
         </view>
     </view>
     <button class="create-btn" bindtap="create" wx:if="{{firstCreate}}">
         <text class="create-text">创建第一个活动</text>
     </button>
+    <!--删除活动后的toast-->
+    <delete-toast wx:if="{{showDeleteToast}}" class="delete-toast-position"></delete-toast>
 </view>

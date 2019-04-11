@@ -1,0 +1,34 @@
+.container {
+    position: relative;
+    width: 566rpx;
+    height: 120rpx;
+    border-radius: 16rpx;
+    box-shadow: 0 16rpx 36rpx 0 rgba(214, 86, 46, 0.2);
+    background-color: #44403f;
+}
+.toast-text{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 12rpx;
+    left: 80rpx;
+    width: 178rpx;
+    height: 96rpx;
+    font-family: PingFang SC;
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #ffffff;
+}
+.cancel{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 12rpx;
+    right: 80rpx;
+    width: 68rpx;
+    height: 96rpx;
+    font-family: PingFang SC;
+    font-size: 32rpx;
+    font-weight: 900;
+    color: #8a6dff;
+}

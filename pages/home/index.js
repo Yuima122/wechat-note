@@ -1,4 +1,5 @@
 // pages/home/index.js
+let timer = null;
 Page({
 
     /**
@@ -7,10 +8,11 @@ Page({
     data: {
         day: '',
         month: '',
-        firstCreate: true,
+        firstCreate: false,
         menuShow: false,
         activities: [],
-        showIndex: null
+        showIndex: null,
+        showDeleteToast: false
     },
 
     /**
@@ -94,5 +96,25 @@ Page({
             menuShow: true,
             showIndex: e.target.dataset.index
         })
+    },
+
+    detele() {
+        const self = this;
+        // 第一步需要有暂时的动态删除
+        const newActivites = this.data.activities;
+        newActivites.splice(this.data.showIndex, 1);
+        this.setData({
+            showDeleteToast: true,
+            menuShow: false,
+            showIndex: null,
+            activities: newActivites
+        })
+        // 3s的定时取消
+        timer = setTimeout(() => {
+            self.setData({
+                showDeleteToast: false
+            });
+            //需要有服务器上传 目前问题是撤销的问题
+        }, 3000)
     }
 })

@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "activity-card": "../../component/activity-card/index"
+    "activity-card": "../../component/activity-card/index",
+    "delete-toast": "../../component/delete-toast/index"
   }
 }

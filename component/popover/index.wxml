@@ -11,7 +11,7 @@
             <text>邀请好友</text>
         </view>
     </view>
-    <view class="delete">
+    <view class="delete" catchtap="delete">
         <image src="../../assets/delete.png" class="pop-over-icon"></image>
         <view class="pop-over-text">
             <text>删除活动</text>

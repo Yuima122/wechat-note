@@ -13,10 +13,10 @@
         <view wx:for="{{groupsUrl}}" wx:key="{{item}}">
             <image src="{{item}}" class="profile"></image>
         </view>
-       <image class="invite-icon" src="../../assets/invite.png"></image>
+        <image class="invite-icon" src="../../assets/invite.png"></image>
     </view>
     <view class="menu-container" catchtap="showMenu">
         <image class="menu" src="../../assets/menu.png"></image>
     </view>
-    <pop-over class="pop-over-position" wx:if="{{menuShow && showIndex === index}}"></pop-over>
+    <pop-over bind:delete="delete" class="pop-over-position" wx:if="{{menuShow && showIndex === index}}"></pop-over>
 </view>
