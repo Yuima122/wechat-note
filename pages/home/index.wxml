@@ -1,4 +1,4 @@
-<view class="container">
+<view class="container" catchtap="closeMenu">
     <view class="date">
         <view class="day">
             {{day}}
@@ -11,7 +11,10 @@
     <view class="activity-card-container">
         <view wx:for="{{activities}}" wx:key="{{item}}">
             <activity-card name="{{item.name}}" checked="{{item.checked}}" frequency="{{item.frequency}}"
-                           groupsUrl="{{item.groupsUrl}}" index="{{index}}" bind:checkActivity="checkActivity"></activity-card>
+                           groupsUrl="{{item.groupsUrl}}" index="{{index}}" menuShow="{{menuShow}}"
+                           showIndex="{{showIndex}}"
+                           data-index="{{index}}"
+                           bind:checkActivity="checkActivity" bind:showMenu="showMenu"></activity-card>
         </view>
     </view>
     <button class="create-btn" bindtap="create" wx:if="{{firstCreate}}">

@@ -68,3 +68,18 @@
     width: 8rpx;
     height: 40rpx;
 }
+.pop-over-position{
+    position: absolute;
+    top: 144rpx;
+    right: 86rpx;
+    z-index: 999;
+    animation: fade 0.5s;
+}
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

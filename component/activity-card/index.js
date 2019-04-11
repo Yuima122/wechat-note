@@ -23,6 +23,14 @@ Component({
         index: {
             type: Number,
             value: null
+        },
+        menuShow: {
+            type: Boolean,
+            value: false
+        },
+        showIndex: {
+            type: Number,
+            value: -1
         }
     },
 
@@ -38,7 +46,7 @@ Component({
      */
     methods: {
         finshActivity() {
-            if(!this.properties.checked) {
+            if (!this.properties.checked) {
                 this.triggerEvent('checkActivity', {
                     index: this.properties.index,
                     checked: true
@@ -49,6 +57,9 @@ Component({
                     checked: false
                 })
             }
+        },
+        showMenu() {
+            this.triggerEvent('showMenu', true)
         }
     }
 })

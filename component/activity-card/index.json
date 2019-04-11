@@ -1,4 +1,6 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "pop-over": "../popover/index"
+  }
 }

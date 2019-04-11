@@ -8,7 +8,9 @@ Page({
         day: '',
         month: '',
         firstCreate: true,
-        activities: []
+        menuShow: false,
+        activities: [],
+        showIndex: null
     },
 
     /**
@@ -78,6 +80,19 @@ Page({
     create() {
         wx.navigateTo({
             url: '../create-activity/index'
+        })
+    },
+
+    closeMenu() {
+        this.setData({
+            menuShow: false
+        })
+    },
+
+    showMenu(e) {
+        this.setData({
+            menuShow: true,
+            showIndex: e.target.dataset.index
         })
     }
 })

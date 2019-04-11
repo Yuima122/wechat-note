@@ -1,0 +1,50 @@
+.container{
+    position: relative;
+    width: 270rpx;
+    height: 304rpx;
+    border-radius: 16rpx;
+    box-shadow: 0 24rpx 32rpx 0 rgba(0, 0, 0, 0.15);
+    background-color: #44403f;
+    overflow: hidden;
+}
+.detail{
+    position: absolute;
+    top: 0;
+    width: 270rpx;
+    height: 96rpx;
+    border-bottom: solid 0.5rpx #DEDEDE;
+}
+.invite{
+    position: absolute;
+    top: 96rpx;
+    width: 270rpx;
+    height: 96rpx;
+    border-bottom: solid 0.5rpx #DEDEDE;
+}
+.delete{
+    position: absolute;
+    top: 200rpx;
+    width: 270rpx;
+    height: 96rpx;
+}
+.pop-over-text{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 2rpx;
+    left: 108rpx;
+    width: 130rpx;
+    height: 96rpx;
+    font-family: PingFang SC;
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #ffffff;
+}
+.pop-over-icon{
+    position: absolute;
+    top: 28rpx;
+    left: 36rpx;
+    width: 40rpx;
+    height: 40rpx;
+}
