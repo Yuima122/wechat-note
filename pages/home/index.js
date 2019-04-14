@@ -8,7 +8,7 @@ Page({
     data: {
         day: '',
         month: '',
-        firstCreate: false,
+        firstCreate: true,
         menuShow: false,
         activities: [],
         showIndex: null,
@@ -64,7 +64,7 @@ Page({
                 {
                     name: '每日阅读两小时并进行阅读笔记',
                     checked: true,
-                    frequency: 2,
+                    frequency: 25,
                     groupsUrl: ['http://img1.imgtn.bdimg.com/it/u=1351704171,1033291640&fm=214&gp=0.jpg', 'http://img1.imgtn.bdimg.com/it/u=1351704171,1033291640&fm=214&gp=0.jpg']
                 }
             ]

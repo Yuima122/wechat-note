@@ -3,7 +3,8 @@
     "pages/login/index",
     "pages/home/index",
     "pages/create-activity/index",
-    "pages/finish-create/index"
+    "pages/finish-create/index",
+    "pages/special-day/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

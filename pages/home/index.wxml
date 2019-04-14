@@ -8,7 +8,7 @@
         </view>
     </view>
     <!--如果用户拥有活动，则显示对应的卡片-->
-    <view class="activity-card-container">
+    <view class="activity-card-container" wx:if="{{!firstCreate}}">
         <view wx:for="{{activities}}" wx:key="{{item}}">
             <activity-card name="{{item.name}}" checked="{{item.checked}}" frequency="{{item.frequency}}"
                            groupsUrl="{{item.groupsUrl}}" index="{{index}}" menuShow="{{menuShow}}"
@@ -19,9 +19,13 @@
                            bind:delete="detele"></activity-card>
         </view>
     </view>
-    <button class="create-btn" bindtap="create" wx:if="{{firstCreate}}">
-        <text class="create-text">创建第一个活动</text>
-    </button>
+    <!--没有活动显示的空白页面-->
+    <view class="black-container" wx:else>
+        <image class="black-icon" src="../../assets/home-black.png"></image>
+        <button class="create-btn" bindtap="create">
+            <text class="create-text">创建第一个活动</text>
+        </button>
+    </view>
     <!--删除活动后的toast-->
     <delete-toast wx:if="{{showDeleteToast}}" class="delete-toast-position" bind:cancel="cancel"></delete-toast>
 </view>

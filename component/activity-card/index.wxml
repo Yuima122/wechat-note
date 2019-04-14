@@ -20,3 +20,10 @@
     </view>
     <pop-over bind:delete="delete" class="pop-over-position" wx:if="{{menuShow && showIndex === index}}"></pop-over>
 </view>
+<!--完成25次活动的纪念日-->
+<view class="special-day-container" wx:if="{{frequency === 25}}" bindtap="goSpecialDay">
+    <view class="special-text">
+        <text>25 Days Celebration</text>
+    </view>
+    <image src="../../assets/specialday-icon.png" class="special-icon"></image>
+</view>

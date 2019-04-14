@@ -90,3 +90,31 @@
         opacity: 1;
     }
 }
+.special-day-container{
+    position: relative;
+    width: 670rpx;
+    height: 106rpx;
+    border-bottom-left-radius: 80rpx;
+    border-bottom-right-radius: 16rpx;
+    box-shadow: 0 8px 18px 0 rgba(214, 86, 46, 0.2);
+    background-image: linear-gradient(to top, #b57bff, #8668ff);
+    bottom: 70rpx;
+}
+.special-text{
+    position: absolute;
+    top: 30rpx;
+    left: 114rpx;
+    width: 368rpx;
+    height: 58rpx;
+    font-family: PingFang SC;
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #ffffff;
+}
+.special-icon{
+    position: absolute;
+    top: 44rpx;
+    left: 602rpx;
+    width: 24rpx;
+    height: 22rpx;
+}

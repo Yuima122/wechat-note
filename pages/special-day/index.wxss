@@ -1,0 +1,10 @@
+/* pages/special-day/index.wxss */
+page{
+    width: 100%;
+    height: 100%;
+}
+.container {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+}

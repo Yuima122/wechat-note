@@ -63,6 +63,16 @@ Component({
         },
         delete() {
             this.triggerEvent('delete', true)
+        },
+        goSpecialDay() {
+            let param = '';
+            this.properties.groupsUrl.forEach((item, index) => {
+                param += 'groupsUrl' + index + '=' + encodeURIComponent(item) + '&';
+            })
+            param = param.substring(0, param.length - 1);
+            wx.navigateTo({
+                url: '../../pages/special-day/index?' + param
+            })
         }
     }
 })

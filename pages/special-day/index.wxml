@@ -1,0 +1,6 @@
+<view class="container">
+   <image src="../../assets/25days.png" class="special-day-pic"></image>
+    <view class="detail">
+
+    </view>
+</view>

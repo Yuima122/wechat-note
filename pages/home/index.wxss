@@ -38,18 +38,18 @@ page{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 436rpx;
+    width: 536rpx;
     height: 96rpx;
     border-radius: 16rpx;
     box-shadow: 0 16rpx 36rpx 0 rgba(214, 86, 46, 0.2);
-    background-color: #ffffff;
+    background-color: #8668ff;
 }
 .create-text{
     font-family: PingFang SC;
     font-size: 36rpx;
     text-align: center;
     font-weight: bold;
-    color: rgba(0, 0, 0, 0.75);
+    color: #ffffff;
 }
 .activity-card-container{
     position: absolute;
@@ -69,4 +69,15 @@ page{
         bottom: 60rpx;
         opacity: 1;
     }
+}
+.black-icon{
+    position: absolute;
+    top: 376rpx;
+    width: 668rpx;
+    height: 492rpx;
+}
+.black-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
