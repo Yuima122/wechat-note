@@ -23,5 +23,5 @@
         <text class="create-text">创建第一个活动</text>
     </button>
     <!--删除活动后的toast-->
-    <delete-toast wx:if="{{showDeleteToast}}" class="delete-toast-position"></delete-toast>
+    <delete-toast wx:if="{{showDeleteToast}}" class="delete-toast-position" bind:cancel="cancel"></delete-toast>
 </view>

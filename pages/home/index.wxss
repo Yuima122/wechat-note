@@ -63,8 +63,10 @@ page{
 @keyframes toastAnimation {
     from {
         bottom: 0;
+        opacity: 0;
     }
     to {
         bottom: 60rpx;
+        opacity: 1;
     }
 }

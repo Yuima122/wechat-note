@@ -3,7 +3,7 @@
         <image bindtap="finshActivity" class="checkbox" src="../../assets/checkbox_1.png" wx:if="{{!checked}}"></image>
         <image bindtap="finshActivity" class="checkbox" src="../../assets/checkbox_2.png" wx:else></image>
     </view>
-    <view class="name-container">
+    <view class="name-container {{checked ? 'checked-name' : ''}}">
         <text>{{name}}</text>
     </view>
     <view class="frequency-container">

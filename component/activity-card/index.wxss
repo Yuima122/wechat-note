@@ -61,8 +61,12 @@
 }
 .menu-container{
     position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 86rpx;
+    height: 78rpx;
     top: 162rpx;
-    right: 44rpx;
+    right: 8rpx;
 }
 .menu{
     width: 8rpx;
@@ -74,6 +78,9 @@
     right: 86rpx;
     z-index: 999;
     animation: fade 0.5s;
+}
+.checked-name{
+    color: rgba(0, 0, 0, 0.25);
 }
 @keyframes fade {
     from {
