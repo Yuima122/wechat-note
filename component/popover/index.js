@@ -3,7 +3,12 @@ Component({
     /**
      * 组件的属性列表
      */
-    properties: {},
+    properties: {
+        index: {
+            type: Number,
+            value: null
+        }
+    },
 
     /**
      * 组件的初始数据
@@ -16,6 +21,11 @@ Component({
     methods: {
         delete() {
             this.triggerEvent('delete', true)
+        },
+        goToDetailPage() {
+            wx.navigateTo({
+                url: '../../pages/activity-detail/index?index=' + this.properties.index
+            })
         }
     }
 })

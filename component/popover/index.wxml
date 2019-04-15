@@ -1,5 +1,5 @@
 <view class="container">
-    <view class="detail">
+    <view class="detail" catchtap="goToDetailPage">
         <image src="../../assets/detail.png" class="pop-over-icon"></image>
         <view class="pop-over-text">
             <text>活动详情</text>

@@ -8,7 +8,7 @@ Page({
     data: {
         day: '',
         month: '',
-        firstCreate: true,
+        firstCreate: false,
         menuShow: false,
         activities: [],
         showIndex: null,

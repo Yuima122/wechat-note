@@ -4,7 +4,8 @@
     "pages/home/index",
     "pages/create-activity/index",
     "pages/finish-create/index",
-    "pages/special-day/index"
+    "pages/special-day/index",
+    "pages/activity-detail/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

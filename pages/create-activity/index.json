@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "selector": "../../component/selector/index"
-  }
+  },
+  "navigationBarTitleText": "创建活动"
 }

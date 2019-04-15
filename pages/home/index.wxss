@@ -81,3 +81,20 @@ page{
     display: flex;
     justify-content: center;
 }
+.create-icn-container{
+    position: fixed;
+    width: 116rpx;
+    height: 116rpx;
+    box-shadow: 0 16rpx 36rpx 0 rgba(214, 86, 46, 0.2);
+    background-color: #8668ff;
+    border-radius: 50%;
+    right: 52rpx;
+    bottom: 52rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.create-icon {
+    width: 56rpx;
+    height: 56rpx;
+}

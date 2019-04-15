@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "message": "../../component/message/index"
+  },
+  "navigationBarTitleText": "活动记录"
+}

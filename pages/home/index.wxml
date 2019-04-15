@@ -19,6 +19,9 @@
                            bind:delete="detele"></activity-card>
         </view>
     </view>
+    <view class="create-icn-container" wx:if="{{!firstCreate}}" bindtap="create">
+        <image class="create-icon" src="../../assets/home-add.png"></image>
+    </view>
     <!--没有活动显示的空白页面-->
     <view class="black-container" wx:else>
         <image class="black-icon" src="../../assets/home-black.png"></image>

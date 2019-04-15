@@ -1,0 +1,31 @@
+<view class="container">
+   <view class="name">
+       <text>{{activity.name}}</text>
+   </view>
+    <view class="createdTime">
+        <text>{{time}}</text>
+    </view>
+    <view class="frequency">
+        <text>No.{{activity.frequency}}</text>
+    </view>
+    <!--存放留言的组件-->
+    <view class="messages" wx:if="{{activity.messages.length}}">
+
+    </view>
+    <!--无留言时的显示图-->
+    <view class="black-container" wx:else>
+        <image class="black-pic" src="../../assets/black-pic.png"></image>
+        <text class="black-text">
+            用文字来记录今天的活动吧~
+        </text>
+    </view>
+    <view class="black-message-btn" wx:if="{{!activity.messages.length}}">
+        <image class="black-btn-icon" src="../../assets/edit2.png"></image>
+        <view class="black-btn-text">
+            <text>留下感想</text>
+        </view>
+    </view>
+    <view class="message-btn" wx:else>
+        <image class="btn-icon" src="../../assets/edit.png"></image>
+    </view>
+</view>
