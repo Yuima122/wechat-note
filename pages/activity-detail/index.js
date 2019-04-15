@@ -37,11 +37,14 @@ Page({
 
     translateTime(time) {
         const date = new Date(time);
-        const month = date.getMonth() + 1;
-        const year = date.getFullYear();
+        let month = date.getMonth() + 1;
+        let year = date.getFullYear();
         let day = date.getDate();
         if (day < 10) {
             day = '0' + day;
+        }
+        if (month < 10) {
+            month = '0' + month;
         }
         this.setData({
             time: year + '/' + month + '/' + day
