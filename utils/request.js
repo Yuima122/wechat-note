@@ -15,17 +15,17 @@ export default class Request {
 
     //DELETE请求
     deleteRequest(url, data = null, header = this._header) {
-        return this.requestAll((url, data, header, 'DELETE'));
+        return this.requestAll(url, data, header, 'DELETE');
     }
 
     //PUT请求
     putRequest(url, data, header = this._header) {
-        return this.requestAll((url, data, header, 'PUT'));
+        return this.requestAll(url, data, header, 'PUT');
     }
 
     //POST请求
     postRequest(url, data, header = this._header) {
-        return this.requestAll((url, data, header, 'POST'));
+        return this.requestAll(url, data, header, 'POST');
     }
 
 
@@ -38,7 +38,7 @@ export default class Request {
                 header: header,
                 method: method,
                 success: (res => {
-                    if (res.status === 200) {
+                    if (res.statusCode === 200) {
                         resolve(res);
                     } else {
                         if (this._errorHandler !== null) {

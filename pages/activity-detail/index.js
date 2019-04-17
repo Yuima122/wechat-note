@@ -50,6 +50,4 @@ Page({
             time: year + '/' + month + '/' + day
         })
     }
-
-
 })
