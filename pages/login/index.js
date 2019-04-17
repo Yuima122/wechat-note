@@ -1,7 +1,6 @@
 // pages/log/index.js
 import Login from '../../service/login'
 
-const app = getApp();
 Page({
 
     /**
@@ -35,7 +34,6 @@ Page({
                                 // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
                                 wx.getUserInfo({
                                     success: res => {
-                                        app.globalData.userInfo = res.userInfo;
                                         wx.setStorageSync('userInfo', res.userInfo);
                                         userInfo.userInfo = res.userInfo;
                                         login.userLogin(userInfo).then(data => {
@@ -66,6 +64,7 @@ Page({
                 }
                 wx.getUserInfo({
                     success: res => {
+                        wx.setStorageSync('userInfo', res.userInfo);
                         userInfo.userInfo = res.userInfo;
                         const login = new Login();
                         login.userLogin(userInfo).then(data => {
