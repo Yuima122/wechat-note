@@ -1,12 +1,9 @@
 import Request from '../utils/request'
 
-export default class Login {
+export default class Activity {
     constructor() {
-        this._baseUrl = 'https://www.weplann.cn/api/code2Session';
-        this._defaultHeader = {
-            'content-type': 'application/json'
-        };
-        this._request = new Request(this._defaultHeader);
+        this._baseUrl = 'https://www.weplann.cn/activity/';
+        this._request = new Request();
         this._request.setErrorHandler(this.errorHander);
     }
 
@@ -14,7 +11,11 @@ export default class Login {
         console.log(err);
     }
 
-    userLogin(data) {
+    create(data) {
         return this._request.postRequest(this._baseUrl, data).then(res => res.data);
+    }
+
+    get(activityId) {
+        return this._request.getRequest(this._baseUrl + activityId).then(res => res.data);
     }
 }

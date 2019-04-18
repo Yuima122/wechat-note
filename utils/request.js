@@ -1,5 +1,7 @@
 export default class Request {
-    constructor(header = {}) {
+    constructor(header = {
+        'content-type': 'application/json'
+    }) {
         this._header = header;
     }
 

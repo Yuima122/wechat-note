@@ -12,7 +12,7 @@ Component({
         frequency: '每天一次',
         selectorShow: false,
         frequencies: [
-            '每天一次', '每周一次', '每月一次'
+            '每天一次', '两天一次', '每周一次'
         ]
     },
 

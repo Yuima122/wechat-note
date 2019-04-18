@@ -1,5 +1,6 @@
-// pages/log/index.js
-import Login from '../../service/login'
+import User from '../../service/user'
+
+const user = new User();
 
 Page({
 
@@ -15,59 +16,40 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        // 获取用户信息
+        // 获取用户信息, 首先读本地的缓存，读不到再去查询服务器
         if (wx.getStorageSync('userInfo') && wx.getStorageSync('openId')) {
             wx.redirectTo({
                 url: '../home/index'
             });
         } else {
-            wx.login({
-                success: res => {
-                    const userInfo = {
-                        code: res.code
+            wx.getSetting({
+                success: setting => {
+                    //已授权
+                    if (setting.authSetting['scope.userInfo']) {
+                        this.bindGetUserInfo();
+                    } else {
+                        this.setData({
+                            showPage: true
+                        })
                     }
-                    // 获取openId
-                    const login = new Login();
-                    wx.getSetting({
-                        success: res => {
-                            if (res.authSetting['scope.userInfo']) {
-                                // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-                                wx.getUserInfo({
-                                    success: res => {
-                                        wx.setStorageSync('userInfo', res.userInfo);
-                                        userInfo.userInfo = res.userInfo;
-                                        login.userLogin(userInfo).then(data => {
-                                            wx.setStorageSync('openId', data.openId);
-                                            wx.redirectTo({
-                                                url: '../home/index'
-                                            });
-                                        })
-                                    }
-                                })
-                            } else {
-                                this.setData({
-                                    showPage: true
-                                })
-                            }
-                        }
-                    })
                 }
             })
         }
     },
 
-    bindGetUserInfo(e) {
-        wx.login({
-            success: res => {
-                const userInfo = {
-                    code: res.code
+    bindGetUserInfo() {
+        wx.getUserInfo({
+            success: userInfo => {
+                // 登录发给服务器的用户数据用于更新数据库
+                const message = {
+                    userInfo: userInfo.userInfo
                 }
-                wx.getUserInfo({
+                wx.setStorageSync('userInfo', userInfo);
+                wx.login({
                     success: res => {
-                        wx.setStorageSync('userInfo', res.userInfo);
-                        userInfo.userInfo = res.userInfo;
-                        const login = new Login();
-                        login.userLogin(userInfo).then(data => {
+                        // 封装用户code给服务器
+                        message.code = res.code;
+                        user.create(message).then(data => {
                             wx.setStorageSync('openId', data.openId);
                             wx.redirectTo({
                                 url: '../home/index'
@@ -75,6 +57,7 @@ Page({
                         })
                     }
                 })
+
             }
         })
     },
