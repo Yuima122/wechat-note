@@ -1,4 +1,7 @@
 // pages/create-activity/index.js
+import Activity from '../../service/activity'
+
+const activity = new Activity()
 Page({
 
     /**
@@ -37,13 +40,24 @@ Page({
 
     sendCreate() {
         if (this.data.name) {
-            const message = {
-                name: this.data.name,
-                frequency: this.data.frequency
+            const frequencyMap = {
+                '每天一次': 0,
+                '两天一次': 1,
+                '每周一次': 2
             }
-            console.log(message);
-            wx.navigateTo({
-                url: '../finish-create/index'
+            const activityInfo = {
+                name: this.data.name,
+                frequency: frequencyMap[this.data.frequency]
+            }
+            const data = {
+                openId: wx.getStorageSync('openId'),
+                activityInfo: activityInfo
+            }
+            console.log(data);
+            activity.create(data).then(() => {
+                wx.navigateTo({
+                    url: '../finish-create/index'
+                })
             })
         } else {
             this.setData({

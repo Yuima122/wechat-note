@@ -5,7 +5,8 @@
     "pages/create-activity/index",
     "pages/finish-create/index",
     "pages/special-day/index",
-    "pages/activity-detail/index"
+    "pages/activity-detail/index",
+    "pages/write-message/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

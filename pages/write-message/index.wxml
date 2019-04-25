@@ -1,0 +1,9 @@
+<view class="container">
+    <view class="message-input-contaienr">
+        <textarea class="message-input" placeholder="写下你的评论吧~" bindinput='watchInput'></textarea>
+        <view class="word-show">{{word}}</view>
+    </view>
+    <view class="complete">
+        <text>发表评论</text>
+    </view>
+</view>

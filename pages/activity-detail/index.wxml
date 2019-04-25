@@ -21,7 +21,7 @@
     </view>
     <view class="black-message-btn" wx:if="{{!activity.messages.length}}">
         <image class="black-btn-icon" src="../../assets/edit2.png"></image>
-        <view class="black-btn-text">
+        <view class="black-btn-text" bindtap="writeMessage">
             <text>留下感想</text>
         </view>
     </view>

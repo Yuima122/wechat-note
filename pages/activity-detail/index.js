@@ -49,5 +49,11 @@ Page({
         this.setData({
             time: year + '/' + month + '/' + day
         })
+    },
+
+    writeMessage() {
+        wx.navigateTo({
+            url: '../write-message/index'
+        })
     }
 })
