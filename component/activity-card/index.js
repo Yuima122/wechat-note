@@ -77,7 +77,7 @@ Component({
             }
             if (!this.data.activity.checked) {
                 data.checked = 1;
-                //post服务器 check 状态
+                //post服务器 check 状态 1
                 associate.put(data).then(() => {
                     this.data.activity.checked = 1;
                     this.setData({
@@ -85,7 +85,7 @@ Component({
                     })
                 })
             } else {
-                //post服务器 check 状态
+                //post服务器 check 状态 0
                 associate.put(data).then(() => {
                     this.data.activity.checked = 0;
                     this.setData({
@@ -102,7 +102,7 @@ Component({
         },
         goSpecialDay() {
             let param = '';
-            this.properties.groupsUrl.forEach((item, index) => {
+            this.data.activity.groupsUrl.forEach((item, index) => {
                 param += 'groupsUrl' + index + '=' + encodeURIComponent(item) + '&';
             })
             param = param.substring(0, param.length - 1);

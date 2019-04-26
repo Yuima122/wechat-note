@@ -60,7 +60,6 @@ Page({
         // 初始化数据过程，需要导入用户的活动并根据是否有活动改变是否初次创建的逻辑
         const openId = wx.getStorageSync('openId');
         user.get(openId).then(data => {
-            console.log(data);
             this.setData({
                 activities: data.activities,
                 firstCreate: data.activities.length ? false : true

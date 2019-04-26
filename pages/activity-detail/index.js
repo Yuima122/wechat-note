@@ -31,7 +31,7 @@ Page({
             this.setData({
                 activity: newActivity
             })
-            this.translateTime(this.data.activity.createTime * 1000)
+            this.translateTime(this.data.activity.createdTime * 1000)
         })
     },
 
