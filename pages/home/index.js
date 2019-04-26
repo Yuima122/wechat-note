@@ -1,4 +1,9 @@
 // pages/home/index.js
+import User from '../../service/user'
+import Activity from '../../service/activity'
+
+const user = new User();
+const activity = new Activity();
 let timer = null;
 Page({
 
@@ -53,30 +58,13 @@ Page({
 
     initData() {
         // 初始化数据过程，需要导入用户的活动并根据是否有活动改变是否初次创建的逻辑
-        this.setData({
-            activities: [
-                {
-                    name: '每日阅读两小时并进行阅读笔记',
-                    checked: false,
-                    frequency: 1,
-                    groupsUrl: ['http://img1.imgtn.bdimg.com/it/u=1351704171,1033291640&fm=214&gp=0.jpg']
-                },
-                {
-                    name: '每日阅读两小时并进行阅读笔记',
-                    checked: true,
-                    frequency: 25,
-                    groupsUrl: ['http://img1.imgtn.bdimg.com/it/u=1351704171,1033291640&fm=214&gp=0.jpg', 'http://img1.imgtn.bdimg.com/it/u=1351704171,1033291640&fm=214&gp=0.jpg']
-                }
-            ]
-        })
-    },
-
-    checkActivity(event) {
-        //需要将状态上传到服务器
-        let newActivities = this.data.activities;
-        newActivities[event.detail.index].checked = event.detail.checked;
-        this.setData({
-            activities: newActivities
+        const openId = wx.getStorageSync('openId');
+        user.get(openId).then(data => {
+            console.log(data);
+            this.setData({
+                activities: data.activities,
+                firstCreate: data.activities.length ? false : true
+            })
         })
     },
 
@@ -122,6 +110,7 @@ Page({
                 showDeleteToast: false
             });
             //需要有服务器上传 目前问题是撤销的问题
+            self.postDelete(self.data.deleteActivity.activity.activityId);
         }, 6000)
     },
 
@@ -132,6 +121,12 @@ Page({
         this.setData({
             activities: newActivities,
             showDeleteToast: false
+        })
+    },
+
+    postDelete(activityId) {
+        activity.delete(activityId).then(data => {
+            console.log(data);
         })
     }
 

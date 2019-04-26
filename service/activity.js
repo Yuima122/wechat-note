@@ -18,4 +18,8 @@ export default class Activity {
     get(activityId) {
         return this._request.getRequest(this._baseUrl + activityId).then(res => res.data);
     }
+
+    delete(activityId) {
+        return this._request.deleteRequest(this._baseUrl + activityId).then(res => res.data);
+    }
 }

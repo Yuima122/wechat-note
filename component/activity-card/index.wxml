@@ -1,16 +1,16 @@
 <view class="container">
     <view class="checkbox-container">
-        <image bindtap="finshActivity" class="checkbox" src="../../assets/checkbox_1.png" wx:if="{{!checked}}"></image>
-        <image bindtap="finshActivity" class="checkbox" src="../../assets/checkbox_2.png" wx:else></image>
+        <image bindtap="finishActivity" class="checkbox" src="../../assets/checkbox_1.png" wx:if="{{!checked}}"></image>
+        <image bindtap="finishActivity" class="checkbox" src="../../assets/checkbox_2.png" wx:else></image>
     </view>
     <view class="name-container {{checked ? 'checked-name' : ''}}">
-        <text>{{name}}</text>
+        <text>{{activity.name}}</text>
     </view>
     <view class="frequency-container">
-        <text>NO.{{frequency}}</text>
+        <text>NO.{{activity.frequency}}</text>
     </view>
     <view class="groups-container">
-        <view wx:for="{{groupsUrl}}" wx:key="{{item}}">
+        <view wx:for="{{activity.groupsUrl}}" wx:key="{{item}}">
             <image src="{{item}}" class="profile"></image>
         </view>
         <image class="invite-icon" src="../../assets/invite.png"></image>
@@ -19,10 +19,10 @@
         <image class="menu" src="../../assets/menu.png"></image>
     </view>
     <pop-over bind:delete="delete" class="pop-over-position" wx:if="{{menuShow && showIndex === index}}"
-              index="{{index}}"></pop-over>
+              activityId="{{activityId}}"></pop-over>
 </view>
 <!--完成25次活动的纪念日-->
-<view class="special-day-container" wx:if="{{frequency === 25}}" bindtap="goSpecialDay">
+<view class="special-day-container" wx:if="{{activity.frequency === 25}}" bindtap="goSpecialDay">
     <view class="special-text">
         <text>25 Days Celebration</text>
     </view>

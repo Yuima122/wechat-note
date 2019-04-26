@@ -1,11 +1,14 @@
 // pages/activity-detail/index.js
+import Activity from '../../service/activity'
+
+const activity = new Activity();
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        activity: [], //用户的所有活动，通过传入的索引去取具体值
+        activity: {}, //用户的所有活动，通过传入的索引去取具体值
         time: ''
     },
 
@@ -13,26 +16,23 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        this.initData(options.index);
+        console.log(options)
+        this.initData(options.activityId);
     },
 
-    initData(index) {
+    initData(activityId) {
         //request 请求
-        const activities = [{
-            name: '每日阅读两小时并进行阅读笔记',
-            frequency: 1,
-            createdTime: 1555312183860,
-            messages: []
-        }, {
-            name: '每日阅读两小时并进行阅读笔记',
-            frequency: 25,
-            createdTime: 1555312183860,
-            messages: []
-        }];
-        this.setData({
-            activity: activities[index]
+        activity.get(activityId).then(data => {
+            console.log(data);
+            const newActivity = {};
+            Object.keys(data.activityInfo).forEach(key => {
+                newActivity[key] = data.activityInfo[key];
+            })
+            this.setData({
+                activity: newActivity
+            })
+            this.translateTime(this.data.activity.createTime * 1000)
         })
-        this.translateTime(this.data.activity.createdTime)
     },
 
     translateTime(time) {

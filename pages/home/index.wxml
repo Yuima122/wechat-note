@@ -10,11 +10,9 @@
     <!--如果用户拥有活动，则显示对应的卡片-->
     <view class="activity-card-container" wx:if="{{!firstCreate}}">
         <view wx:for="{{activities}}" wx:key="{{item}}">
-            <activity-card name="{{item.name}}" checked="{{item.checked}}" frequency="{{item.frequency}}"
-                           groupsUrl="{{item.groupsUrl}}" index="{{index}}" menuShow="{{menuShow}}"
+            <activity-card activityId="{{item.activityId}}" index="{{index}}" menuShow="{{menuShow}}"
                            showIndex="{{showIndex}}"
                            data-index="{{index}}"
-                           bind:checkActivity="checkActivity"
                            bind:showMenu="showMenu"
                            bind:delete="detele"></activity-card>
         </view>

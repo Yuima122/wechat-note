@@ -4,8 +4,8 @@ Component({
      * 组件的属性列表
      */
     properties: {
-        index: {
-            type: Number,
+        activityId: {
+            type: String,
             value: null
         }
     },
@@ -24,7 +24,7 @@ Component({
         },
         goToDetailPage() {
             wx.navigateTo({
-                url: '../../pages/activity-detail/index?index=' + this.properties.index
+                url: '../../pages/activity-detail/index?activityId=' + this.properties.activityId
             })
         }
     }
