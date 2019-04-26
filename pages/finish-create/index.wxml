@@ -2,6 +2,7 @@
     <view class="finish-text">
         <text>创建成功！</text>
     </view>
+    <image class="complete" src="../../assets/complete-create.png"></image>
     <button class="invite">
         <text>邀请好友</text>
     </button>

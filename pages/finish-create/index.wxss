@@ -41,3 +41,9 @@ page{
     font-weight: bold;
     color: #ffffff;
 }
+.complete{
+    position: absolute;
+    top: 214rpx;
+    width: 470rpx;
+    height: 328rpx;
+}
