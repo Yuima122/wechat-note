@@ -19,7 +19,7 @@
         <image class="menu" src="../../assets/menu.png"></image>
     </view>
     <pop-over bind:delete="delete" class="pop-over-position" wx:if="{{menuShow && showIndex === index}}"
-              activityId="{{activityId}}"></pop-over>
+              activityId="{{activityId}}" bind:closeMenu="closeMenu"></pop-over>
 </view>
 <!--完成25次活动的纪念日-->
 <view class="special-day-container" wx:if="{{activity.frequency === 25}}" bindtap="goSpecialDay">

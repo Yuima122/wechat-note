@@ -20,9 +20,10 @@ Component({
      */
     methods: {
         delete() {
-            this.triggerEvent('delete', true)
+            this.triggerEvent('delete', true);
         },
         goToDetailPage() {
+            this.triggerEvent('closeMenu', true);
             wx.navigateTo({
                 url: '../../pages/activity-detail/index?activityId=' + this.properties.activityId
             })

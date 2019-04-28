@@ -1,2 +1,17 @@
-<!--component/message/index.wxml-->
-<text>component/message/index.wxml</text>
+<view class="container">
+    <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+    <view class="name">
+        <text>{{userInfo.nickName}}</text>
+        <text class="time">{{time}}</text>
+    </view>
+    <view class="text">
+        <text>{{message.text}}</text>
+    </view>
+    <view class="star-container">
+        <image class="red {{userStar ? 'star-red' : ''}}" src="../../assets/Like_red.png" wx:if="{{stared}}"></image>
+        <image class="gray {{userStar ? 'star-gray' : ''}}" src="../../assets/Like_gray.png" bindtap="star"></image>
+        <view class="number {{stared ? 'redNumber' : 'grayNumber'}}">
+            <text>{{starNumber}}</text>
+        </view>
+    </view>
+</view>

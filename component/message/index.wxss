@@ -1,1 +1,174 @@
 /* component/message/index.wxss */
+.container{
+    position: relative;
+    width: 692rpx;
+    border-radius: 8rpx;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 48rpx;
+}
+.avatar{
+    position: absolute;
+    top: 22rpx;
+    left: 24rpx;
+    width: 48rpx;
+    height: 48rpx;
+    border-radius: 50%;
+}
+.name{
+    position: absolute;
+    width: 100%;
+    top: 24rpx;
+    left: 88rpx;
+    font-family: PingFang SC;
+    font-size: 36rpx;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.55);
+}
+.time{
+    font-family: SFCompactDisplay;
+    font-size: 28rpx;
+    font-weight: 500;
+    color: rgba(164, 164, 164, 0.7);
+    margin-left: 16rpx;
+}
+.text{
+    position: relative;
+    width: 640rpx;
+    font-family: PingFang SC;
+    font-size: 28rpx;
+    font-weight: 500;
+    color: #a4a4a4;
+    padding: 92rpx 0 78rpx 0;
+}
+.red{
+    position: absolute;
+    right: 66rpx;
+    bottom: 24rpx;
+    width: 50rpx;
+    height: 50rpx;
+}
+.gray{
+    position: absolute;
+    right: 66rpx;
+    bottom: 24rpx;
+    width: 50rpx;
+    height: 50rpx;
+}
+.number{
+    position: absolute;
+    right: 38rpx;
+    bottom: 34rpx;
+    font-family: PingFang SC;
+    font-size: 24rpx;
+    font-weight: bold;
+}
+.redNumber{
+    color: #f56f6f;
+}
+.grayNumber{
+    color: #bfbfbf;
+}
+.star-red{
+    animation: startStarRed 1s;
+    animation-fill-mode: forwards;
+}
+.star-gray{
+    animation: startStarGray 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes startStarRed {
+    0% {
+        transform: scale();
+        opacity: ;
+    }
+    10% {
+        transform: scale();
+        opacity: ;
+    }
+    20% {
+        transform: scale();
+        opacity: ;
+    }
+    30% {
+        transform: scale();
+        opacity: ;
+    }
+    40% {
+        transform: scale();
+        opacity: ;
+    }
+    50% {
+        transform: scale();
+        opacity: ;
+    }
+    60% {
+        transform: scale();
+        opacity: ;
+    }
+    70% {
+        transform: scale();
+        opacity: ;
+    }
+    80% {
+        transform: scale();
+        opacity: ;
+    }
+    90% {
+        transform: scale();
+        opacity: ;
+    }
+    100% {
+        transform: scale();
+        opacity: ;
+    }
+}
+
+@keyframes startStarGray {
+    0% {
+        transform: scale();
+        opacity: ;
+    }
+    10% {
+        transform: scale();
+        opacity: ;
+    }
+    20% {
+        transform: scale();
+        opacity: ;
+    }
+    30% {
+        transform: scale();
+        opacity: ;
+    }
+    40% {
+        transform: scale();
+        opacity: ;
+    }
+    50% {
+        transform: scale();
+        opacity: ;
+    }
+    60% {
+        transform: scale();
+        opacity: ;
+    }
+    70% {
+        transform: scale();
+        opacity: ;
+    }
+    80% {
+        transform: scale();
+        opacity: ;
+    }
+    90% {
+        transform: scale();
+        opacity: ;
+    }
+    100% {
+        transform: scale();
+        opacity: ;
+    }
+}

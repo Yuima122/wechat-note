@@ -100,6 +100,9 @@ Component({
         delete() {
             this.triggerEvent('delete', true)
         },
+        closeMenu() {
+            this.triggerEvent('closeMenu', true)
+        },
         goSpecialDay() {
             let param = '';
             this.data.activity.groupsUrl.forEach((item, index) => {

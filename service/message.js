@@ -16,6 +16,6 @@ export default class Message {
     }
 
     get(activityId) {
-        return this._request.getRequest(this._baseUrl + '?activityId=', activityId);
+        return this._request.getRequest(this._baseUrl + '?activityId=' + activityId).then(res => res.data);
     }
 }

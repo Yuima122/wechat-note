@@ -15,7 +15,7 @@ export default class Star {
         return this._request.postRequest(this._baseUrl, data).then(res => res.data);
     }
 
-    delete(data) {
-        return this._request.deleteRequest(this._baseUrl, data).then(res => res.data);
+    delete(msgId, openId) {
+        return this._request.deleteRequest(this._baseUrl + '?msgId=' + msgId + '&openId=' + openId).then(res => res.data);
     }
 }

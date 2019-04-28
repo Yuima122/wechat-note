@@ -14,7 +14,8 @@
                            showIndex="{{showIndex}}"
                            data-index="{{index}}"
                            bind:showMenu="showMenu"
-                           bind:delete="detele"></activity-card>
+                           bind:delete="detele"
+                           bind:closeMenu="closeMenu"></activity-card>
         </view>
     </view>
     <view class="create-icn-container" wx:if="{{!firstCreate}}" bindtap="create">
