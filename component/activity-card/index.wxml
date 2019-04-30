@@ -1,11 +1,14 @@
 <view class="container">
-    <view class="checkbox-container">
-        <image bindtap="finishActivity" class="checkbox" src="../../assets/checkbox_1.png" wx:if="{{!checked}}"></image>
-        <image bindtap="finishActivity" class="checkbox" src="../../assets/checkbox_2.png" wx:else></image>
+    <view class="checkbox-container" bindtap="checkActivity">
+        <view class="check" wx:if="{{!checked}}">
+            <text>关注</text>
+        </view>
+        <view class="checked" wx:else>
+            <text>已关注</text>
+        </view>
     </view>
-    <view class="name-container {{checked ? 'checked-name' : ''}}">
+    <view class="name-container">
         <text>{{activity.name}}</text>
-        <text wx:if="{{checked}}">（已关注）</text>
     </view>
     <view class="type-container">
         <text>{{activity.type}}</text>

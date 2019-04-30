@@ -78,7 +78,7 @@ Component({
                 })
             })
         },
-        finishActivity() {
+        checkActivity() {
             const data = {
                 openId: wx.getStorageSync('openId'),
                 activityId: this.data.activity.activityId,

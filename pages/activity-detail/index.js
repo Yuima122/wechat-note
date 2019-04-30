@@ -39,7 +39,6 @@ Page({
             this.setData({
                 activity: newActivity
             })
-            console.log(newActivity);
             message.get(activityId).then(data => {
                 this.setData({
                     messages: data.messages,

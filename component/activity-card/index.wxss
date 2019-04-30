@@ -10,20 +10,47 @@
 }
 .checkbox-container{
     position: absolute;
-    top: 30rpx;
-    left: 34rpx;
+    right: 0;
+    top: 0;
+    width: 176rpx;
+    height: 102rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.checkbox{
-    width: 48rpx;
-    height: 48rpx;
+.check{
+    width: 92rpx;
+    height: 38rpx;
+    border-radius: 8rpx;
+    background-color: #8667ff;
+    font-family: PingFang SC;
+    font-size: 24rpx;
+    font-weight: bold;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.checked{
+    width: 92rpx;
+    height: 38rpx;
+    border-radius: 8rpx;
+    background-color: rgba(64, 64, 64, 0.2);
+    font-family: PingFang SC;
+    font-size: 24rpx;
+    font-weight: bold;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .name-container{
     position: absolute;
     width: 420rpx;
-    top: 22rpx;
+    top: 30rpx;
     left: 116rpx;
     font-family: PingFang SC;
-    font-size: 36rpx;
+    font-size: 28rpx;
     font-weight: bold;
     color: rgba(0, 0, 0, 0.75);
 }
@@ -79,9 +106,6 @@
     z-index: 999;
     animation: fade 0.5s;
 }
-.checked-name{
-    color: rgba(0, 0, 0, 0.25);
-}
 @keyframes fade {
     from {
         opacity: 0;
@@ -120,12 +144,13 @@
 }
 .type-icon-container{
     position: absolute;
-    top: 36rpx;
-    right: 36rpx;
+    top: 34rpx;
+    left: 30rpx;
 }
 .type-icon{
     width: 56rpx;
     height: 56rpx;
+    opacity: 0.5;
 }
 .type-container{
     position: absolute;
@@ -144,8 +169,11 @@
     color: #f5ad2d;
 }
 .group-name{
+    position: relative;
+    bottom: 18rpx;
+    left: 8rpx;
     font-family: PingFang SC;
-    font-size: 36rpx;
+    font-size: 24rpx;
     font-weight: bold;
-    color: rgba(0, 0, 0, 0.75);
+    color: rgba(64, 64, 64, 0.5);
 }
