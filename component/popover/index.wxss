@@ -8,7 +8,7 @@
     overflow: hidden;
 }
 .no-delete {
-    height: 188rpx;
+    height: 190rpx;
 }
 .detail{
     position: absolute;
