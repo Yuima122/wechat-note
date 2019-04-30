@@ -75,7 +75,7 @@ Component({
                 this.setData({
                     activity: activity
                 })
-                if(activity.checked !== undefined) {
+                if (activity.checked !== undefined) {
                     this.setData({
                         checked: activity.checked
                     })
