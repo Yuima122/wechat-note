@@ -73,9 +73,13 @@ Component({
                 activity.frequency = frequencyMap[activity.frequency];
                 activity.type = typeMap[activity.type];
                 this.setData({
-                    activity: activity,
-                    checked: activity.checked
+                    activity: activity
                 })
+                if(activity.checked !== undefined) {
+                    this.setData({
+                        checked: activity.checked
+                    })
+                }
             })
         },
         checkActivity() {
