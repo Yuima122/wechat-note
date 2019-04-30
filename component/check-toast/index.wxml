@@ -1,6 +1,6 @@
 <view class="container">
     <view class="toast-text">
-        <text>先关注活动才能留言哦~</text>
+        <text>先关注帖子才能留言哦~</text>
     </view>
     <view class="line">
         <image class="line-icon" src="../../assets/line.jpg"></image>

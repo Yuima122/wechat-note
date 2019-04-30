@@ -21,6 +21,6 @@ export default class Activity {
     }
 
     delete(activityId) {
-        return this._request.deleteRequest(this._baseUrl + activityId).then(res => res.data);
+        return this._request.deleteRequest(this._baseUrl + '?activityId=' + activityId).then(res => res.data);
     }
 }

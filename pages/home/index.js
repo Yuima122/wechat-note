@@ -117,7 +117,7 @@ Page({
                 showDeleteToast: false
             });
             //需要有服务器上传 目前问题是撤销的问题
-            self.postDelete(self.data.deleteActivity.activity.activityId);
+            self.postDelete(self.data.deleteActivity.activity.activityInfo.activityId);
         }, 6000)
     },
 
@@ -132,7 +132,9 @@ Page({
     },
 
     postDelete(activityId) {
-        activity.delete(activityId);
+        activity.delete(activityId).then(data => {
+            console.log('删除的帖子：', data)
+        });
     }
 
 })
