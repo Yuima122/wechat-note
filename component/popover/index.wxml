@@ -1,4 +1,4 @@
-<view class="container">
+<view class="container {{openId === userId ? '' : 'no-delete'}}">
     <view class="detail" catchtap="goToDetailPage">
         <image src="../../assets/detail.png" class="pop-over-icon"></image>
         <view class="pop-over-text">

@@ -7,6 +7,9 @@
     background-color: #44403f;
     overflow: hidden;
 }
+.no-delete {
+    height: 188rpx;
+}
 .detail{
     position: absolute;
     top: 0;
