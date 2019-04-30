@@ -1,9 +1,13 @@
 // component/activity-card/index.js
 import Activity from '../../service/activity'
 import Associate from '../../service/associate'
+import Map from '../../utils/map'
 
 const activity = new Activity();
 const associate = new Associate();
+const map = new Map();
+const frequencyMap = map.frequency2WordMap;
+const typeMap = map.type2WordMap;
 Component({
     /**
      * 组件的属性列表
@@ -62,7 +66,12 @@ Component({
                         })
                     }
                 })
-                activity.groupsUrl = data.participants.map(participant => participant.avatarUrl)
+                activity.groups = {
+                    urls: data.participants.map(participant => participant.avatarUrl),
+                    names: data.participants.map(participant => participant.nickName)
+                }
+                activity.frequency = frequencyMap[activity.frequency];
+                activity.type = typeMap[activity.type];
                 this.setData({
                     activity: activity,
                     checked: activity.checked
@@ -102,16 +111,6 @@ Component({
         },
         closeMenu() {
             this.triggerEvent('closeMenu', true)
-        },
-        goSpecialDay() {
-            let param = '';
-            this.data.activity.groupsUrl.forEach((item, index) => {
-                param += 'groupsUrl' + index + '=' + encodeURIComponent(item) + '&';
-            })
-            param = param.substring(0, param.length - 1);
-            wx.navigateTo({
-                url: '../../pages/special-day/index?' + param
-            })
         }
     }
 })

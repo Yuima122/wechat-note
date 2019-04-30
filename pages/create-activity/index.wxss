@@ -33,11 +33,22 @@ page{
     height: 36rpx;
     z-index: 1;
 }
-.frequency-text{
+.type-text{
     position: absolute;
-    top: 172rpx;
+    top: 426rpx;
     left: 70rpx;
-    width: 124rpx;
+    width: 270rpx;
+    height: 38rpx;
+    font-family: PingFang SC;
+    font-size: 28rpx;
+    font-weight: 500;
+    color: #c1c1c1;
+}
+.time-text{
+    position: absolute;
+    top: 426rpx;
+    left: 520rpx;
+    width: 270rpx;
     height: 38rpx;
     font-family: PingFang SC;
     font-size: 28rpx;
@@ -46,15 +57,48 @@ page{
 }
 .finish{
     position: absolute;
-    top: 630rpx;
+    top: 800rpx;
     width: 268px;
     height: 48px;
     border-radius: 8px;
     box-shadow: 0 8px 18px 0 rgba(214, 86, 46, 0.2);
     background-color: #fdd32a;
 }
-.selector{
+.selector-type{
     position: absolute;
-    top: 232rpx;
-    left: 40rpx;
+    top: 488rpx;
+    left: 42rpx;
+}
+.selector-time {
+    position: absolute;
+    top: 488rpx;
+    right: 42rpx;
+}
+.input-detail-container{
+    position: absolute;
+    top: 186rpx;
+    width: 670rpx;
+    height: 232rpx;
+    border-radius: 16rpx;
+    background-color: #f6f6f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input-detail{
+    width: 620rpx;
+    height: 188rpx;
+    font-family: PingFang SC;
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #515151;
+}
+.show-word{
+    position: absolute;
+    right: 10rpx;
+    bottom: 10rpx;
+    font-family: PingFang SC;
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #515151;
 }

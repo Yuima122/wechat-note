@@ -22,6 +22,7 @@ page {
     left: 36rpx;
     width: 72rpx;
     height: 72rpx;
+    border-radius: 50%;
 }
 .name-position{
     position: absolute;

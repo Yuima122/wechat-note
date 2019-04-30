@@ -7,6 +7,23 @@ page {
     width: 100%;
     min-height:100%;
     background-color: #f6f6f6;
+    padding-bottom: 200rpx;
+}
+.activity-info-container{
+    position: relative;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+}
+.text-contaniner{
+    position: relative;
+    width: 656rpx;
+    font-family: PingFang SC;
+    font-size: 28rpx;
+    font-weight: 500;
+    color: #a4a4a4;
+    padding: 128rpx 0 80rpx 0;
 }
 .name {
     position: absolute;
@@ -20,7 +37,7 @@ page {
 }
 .createdTime {
     position: absolute;
-    top: 136rpx;
+    bottom: 0rpx;
     left: 48rpx;
     width: 250rpx;
     height: 52rpx;
@@ -29,27 +46,54 @@ page {
     font-weight: 500;
     color: #a4a4a4;
 }
-.frequency {
+.type{
     position: absolute;
+    bottom: 0;
+    right: 154rpx;
+    width: 120rpx;
+    height: 48rpx;
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 138rpx;
-    left: 596rpx;
-    width: 100rpx;
-    height: 48rpx;
     border-radius: 10rpx;
-    background-color: #8668ff;
-    font-family: SFCompactDisplay;
+    background-color: #8667ff;
+    ont-family: PingFang SC;
     font-size: 24rpx;
+    font-weight: bold;
     color: #ffffff;
 }
-.black-container{
+.frequency {
     position: absolute;
+    bottom: 0;
+    right: 28rpx;
+    width: 120rpx;
+    height: 48rpx;
     display: flex;
     justify-content: center;
-    top: 276rpx;
+    align-items: center;
+    border-radius: 10rpx;
+    background-color: #8667ff;
+    ont-family: PingFang SC;
+    font-size: 24rpx;
+    font-weight: bold;
+    color: #ffffff;
+}
+.line {
+    position: relative;
+    width: 692rpx;
+    height: 8rpx;
+    border-radius: 4rpx;
+    box-shadow: 0 4rpx 20rpx 0 rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+    margin: 44rpx 0;
+}
+.black-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
     width: 100%;
+    height: 268rpx;
+    margin-top: 44rpx;
 }
 .black-pic{
     position: absolute;
@@ -59,17 +103,17 @@ page {
 }
 .black-text{
     position: absolute;
-    top: 226rpx;
+    bottom: 0;
     font-family: PingFang SC;
     font-size: 28rpx;
     font-weight: 500;
     color: #a4a4a4;
 }
 .black-message-btn{
-    position: absolute;
+    position: relative;
     display: flex;
     align-items: center;
-    top: 630rpx;
+    top: 100rpx;
     width: 536rpx;
     height: 96rpx;
     border-radius: 10rpx;
@@ -112,5 +156,19 @@ page {
 }
 .messages{
     position: relative;
-    top: 20rpx;
+}
+.check-toast{
+    position: fixed;
+    animation: toastAnimation 0.5s;
+    animation-fill-mode: forwards;
+}
+@keyframes toastAnimation {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 60rpx;
+        opacity: 1;
+    }
 }

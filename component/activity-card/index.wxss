@@ -2,7 +2,7 @@
 .container{
     position: relative;
     width: 670rpx;
-    height: 240rpx;
+    height: 288rpx;
     border-radius: 16rpx;
     box-shadow: 0 16rpx 36rpx 0 rgba(214, 86, 46, 0.2);
     background-color: #ffffff;
@@ -19,7 +19,7 @@
 }
 .name-container{
     position: absolute;
-    width: 368rpx;
+    width: 420rpx;
     top: 22rpx;
     left: 116rpx;
     font-family: PingFang SC;
@@ -32,9 +32,9 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 30rpx;
-    right: 44rpx;
-    width: 100rpx;
+    top: 134rpx;
+    left: 252rpx;
+    width: 120rpx;
     height: 48rpx;
     border-radius: 10rpx;
     background-color: #fff6d4;
@@ -46,7 +46,7 @@
 .groups-container{
     position: absolute;
     display: flex;
-    top: 154rpx;
+    top: 206rpx;
     left: 30rpx;
 }
 .profile{
@@ -65,7 +65,7 @@
     justify-content: center;
     width: 86rpx;
     height: 78rpx;
-    top: 162rpx;
+    top: 218rpx;
     right: 8rpx;
 }
 .menu{
@@ -74,7 +74,7 @@
 }
 .pop-over-position{
     position: absolute;
-    top: 144rpx;
+    top: 216rpx;
     right: 86rpx;
     z-index: 999;
     animation: fade 0.5s;
@@ -117,4 +117,35 @@
     left: 602rpx;
     width: 24rpx;
     height: 22rpx;
+}
+.type-icon-container{
+    position: absolute;
+    top: 36rpx;
+    right: 36rpx;
+}
+.type-icon{
+    width: 56rpx;
+    height: 56rpx;
+}
+.type-container{
+    position: absolute;
+    top: 134rpx;
+    left: 116rpx;
+    width: 120rpx;
+    height: 48rpx;
+    border-radius: 10rpx;
+    background-color: #fff6d4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: PingFang SC;
+    font-size: 24rpx;
+    font-weight: bold;
+    color: #f5ad2d;
+}
+.group-name{
+    font-family: PingFang SC;
+    font-size: 36rpx;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.75);
 }

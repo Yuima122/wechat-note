@@ -1,9 +1,11 @@
 // pages/home/index.js
 import User from '../../service/user'
 import Activity from '../../service/activity'
+import Recommend from '../../service/recommend'
 
 const user = new User();
 const activity = new Activity();
+const recommend = new Recommend();
 let timer = null;
 Page({
 
@@ -18,7 +20,8 @@ Page({
         activities: [],
         showIndex: null,
         showDeleteToast: false,
-        deleteActivity: {}
+        deleteActivity: {},
+        dataLoaded:false
     },
 
     /**
@@ -61,8 +64,13 @@ Page({
         const openId = wx.getStorageSync('openId');
         user.get(openId).then(data => {
             this.setData({
-                activities: data.activities,
                 firstCreate: data.activities.length ? false : true
+            })
+            recommend.get().then(data => {
+                this.setData({
+                    activities: data,
+                    dataLoaded: true
+                })
             })
         })
     },
@@ -124,9 +132,7 @@ Page({
     },
 
     postDelete(activityId) {
-        activity.delete(activityId).then(data => {
-            console.log(data);
-        })
+        activity.delete(activityId);
     }
 
 })

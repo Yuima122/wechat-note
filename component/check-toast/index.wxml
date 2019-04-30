@@ -1,0 +1,11 @@
+<view class="container">
+    <view class="toast-text">
+        <text>先关注活动才能留言哦~</text>
+    </view>
+    <view class="line">
+        <image class="line-icon" src="../../assets/line.jpg"></image>
+    </view>
+    <view class="check-text" bindtap="goHome">
+        <text>去关注</text>
+    </view>
+</view>

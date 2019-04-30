@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "message": "../../component/message/index"
+    "message": "../../component/message/index",
+    "check-toast": "../../component/check-toast/index"
   },
   "navigationBarTitleText": "活动记录"
 }

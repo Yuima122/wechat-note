@@ -1,13 +1,22 @@
 <view class="container" wx:if="{{dataLoaded}}">
-   <view class="name">
-       <text>{{activity.name}}</text>
-   </view>
-    <view class="createdTime">
-        <text>{{time}}</text>
+    <view class="activity-info-container">
+        <view class="name">
+            <text>{{activity.name}}</text>
+        </view>
+        <view class="text-contaniner">
+            <text>{{activity.text}}</text>
+        </view>
+        <view class="createdTime">
+            <text>{{time}}</text>
+        </view>
+        <view class="type">
+            <text>{{activity.type}}</text>
+        </view>
+        <view class="frequency" wx:if="{{activity.type === '招聘信息'}}">
+            <text>{{activity.frequency}}</text>
+        </view>
     </view>
-    <view class="frequency">
-        <text>No.{{activity.frequency}}</text>
-    </view>
+    <view class="line"></view>
     <!--存放留言的组件-->
     <view class="messages" wx:if="{{messages.length}}">
         <view wx:for="{{messages}}" wx:key="{{item}}">
@@ -18,7 +27,7 @@
     <view class="black-container" wx:else>
         <image class="black-pic" src="../../assets/black-pic.png"></image>
         <text class="black-text">
-            用文字来记录今天的活动吧~
+            还没有人留言哦，争做第一个吧~
         </text>
     </view>
     <view class="black-message-btn" wx:if="{{!messages.length}}">
@@ -30,4 +39,5 @@
     <view class="message-btn" bindtap="writeMessage" wx:else>
         <image class="btn-icon" src="../../assets/edit2.png"></image>
     </view>
+    <check-toast class="check-toast" wx:if="{{showCheckToast}}"></check-toast>
 </view>

@@ -1,0 +1,43 @@
+.container {
+    position: relative;
+    width: 566rpx;
+    height: 120rpx;
+    border-radius: 16rpx;
+    box-shadow: 0 16rpx 36rpx 0 rgba(214, 86, 46, 0.2);
+    background-color: #44403f;
+}
+.toast-text{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 12rpx;
+    left: 20rpx;
+    width: 360rpx;
+    height: 96rpx;
+    font-family: PingFang SC;
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #ffffff;
+}
+.check-text{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 12rpx;
+    right: 60rpx;
+    width: 100rpx;
+    height: 96rpx;
+    font-family: PingFang SC;
+    font-size: 32rpx;
+    font-weight: 900;
+    color: #8a6dff;
+}
+.line{
+    position: absolute;
+    top: 28rpx;
+    left: 374rpx;
+}
+.line-icon{
+    width: 4rpx;
+    height: 64rpx;
+}

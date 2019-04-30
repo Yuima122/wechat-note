@@ -1,8 +1,9 @@
 import Request from '../utils/request'
+import environment from '../utils/environment'
 
 export default class User {
     constructor() {
-        this._baseUrl = 'https://www.weplann.cn/user/';
+        this._baseUrl = environment.test + '/user/';
         this._request = new Request();
         this._request.setErrorHandler(this.errorHander);
     }
@@ -16,6 +17,6 @@ export default class User {
     }
 
     get(openId) {
-        return this._request.getRequest(this._baseUrl + openId).then(res => res.data);
+        return this._request.getRequest(this._baseUrl + '?openId=' + openId).then(res => res.data);
     }
 }

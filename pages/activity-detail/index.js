@@ -1,9 +1,13 @@
 // pages/activity-detail/index.js
 import Activity from '../../service/activity'
 import Message from '../../service/message'
+import Map from '../../utils/map'
 
+const map = new Map();
 const activity = new Activity();
 const message = new Message();
+const frequncyMap = map.frequency2WordMap;
+const typeMap = map.type2WordMap;
 Page({
 
     /**
@@ -13,7 +17,8 @@ Page({
         activity: {}, //用户的所有活动，通过传入的索引去取具体值
         time: '',
         messages: [],
-        dataLoaded: false
+        dataLoaded: false,
+        showCheckToast: false
     },
 
     /**
@@ -29,9 +34,12 @@ Page({
             Object.keys(data.activityInfo).forEach(key => {
                 newActivity[key] = data.activityInfo[key];
             })
+            newActivity.frequency = frequncyMap[newActivity.frequency];
+            newActivity.type = typeMap[newActivity.type];
             this.setData({
                 activity: newActivity
             })
+            console.log(newActivity);
             message.get(activityId).then(data => {
                 this.setData({
                     messages: data.messages,
@@ -59,8 +67,19 @@ Page({
     },
 
     writeMessage() {
-        wx.navigateTo({
-            url: '../write-message/index?activityId=' + this.data.activity.activityId
-        })
+        if (this.data.activity.checked) {
+            wx.navigateTo({
+                url: '../write-message/index?activityId=' + this.data.activity.activityId
+            })
+        } else {
+            this.setData({
+                showCheckToast: true
+            })
+            setTimeout(() => {
+                this.setData({
+                    showCheckToast: false
+                })
+            }, 3000)
+        }
     }
 })

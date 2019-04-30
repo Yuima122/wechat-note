@@ -7,13 +7,19 @@ Component({
         activityId: {
             type: String,
             value: null
+        },
+        openId: {
+            type: String,
+            value: ''
         }
     },
 
     /**
      * 组件的初始数据
      */
-    data: {},
+    data: {
+        userId: wx.getStorageSync('openId')
+    },
 
     /**
      * 组件的方法列表

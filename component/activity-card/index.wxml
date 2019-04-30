@@ -5,26 +5,30 @@
     </view>
     <view class="name-container {{checked ? 'checked-name' : ''}}">
         <text>{{activity.name}}</text>
+        <text wx:if="{{checked}}">（已关注）</text>
     </view>
-    <view class="frequency-container">
-        <text>NO.{{activity.frequency}}</text>
+    <view class="type-container">
+        <text>{{activity.type}}</text>
+    </view>
+    <view class="frequency-container" wx:if="{{activity.type === '招聘信息'}}">
+        <text>{{activity.frequency}}</text>
+    </view>
+    <view class="type-icon-container">
+        <image src="../../assets/1.png" class="type-icon" wx:if="{{activity.type === '招聘信息'}}"></image>
+        <image src="../../assets/2.png" class="type-icon" wx:elif="{{activity.type === '面试经验'}}"></image>
+        <image src="../../assets/3.png" class="type-icon" wx:else="{{activity.type === '心得体会'}}"></image>
     </view>
     <view class="groups-container">
-        <view wx:for="{{activity.groupsUrl}}" wx:key="{{item}}">
+        <view wx:for="{{activity.groups.urls}}" wx:key="{{item}}">
             <image src="{{item}}" class="profile"></image>
+            <text class="group-name">{{activity.groups.names[index]}}</text>
         </view>
-        <image class="invite-icon" src="../../assets/invite.png"></image>
     </view>
     <view class="menu-container" catchtap="showMenu">
         <image class="menu" src="../../assets/menu.png"></image>
     </view>
-    <pop-over bind:delete="delete" class="pop-over-position" wx:if="{{menuShow && showIndex === index}}"
-              activityId="{{activityId}}" bind:closeMenu="closeMenu"></pop-over>
-</view>
-<!--完成25次活动的纪念日-->
-<view class="special-day-container" wx:if="{{activity.frequency === 25}}" bindtap="goSpecialDay">
-    <view class="special-text">
-        <text>25 Days Celebration</text>
-    </view>
-    <image src="../../assets/specialday-icon.png" class="special-icon"></image>
+    <pop-over activityId="{{activityId}}" openId="{{activity.openId}}"
+              wx:if="{{menuShow && showIndex === index}}"
+              bind:delete="delete" class="pop-over-position"
+              bind:closeMenu="closeMenu"></pop-over>
 </view>

@@ -1,11 +1,24 @@
 <view class="container">
-    <input class="input {{showError ? 'error-input' : ''}}" placeholder="{{showError ? ' 还没有输入活动名称哦' : ' 输入活动名称'}}" bindinput='watchInput'
+    <input class="input {{showError ? 'error-input' : ''}}"
+           placeholder="{{showError ? ' 还没有输入招聘活动名称哦' : ' 输入招聘活动名称(必填)'}}" bindinput='watchInput'
            placeholder-class="{{showError ? 'error-placeholder' : ''}}" bindfocus="cancleError"/>
-    <image src="../../assets/error.png" class="error-icon" wx:if="{{showError}}"></image>
-    <view class="frequency-text">
-        <text>活动频率:</text>
+    <view class="input-detail-container">
+        <textarea class="input-detail" placeholder="输入相关描述" bindinput='watchTextareaInput'></textarea>
+        <text class="show-word">{{word}}</text>
     </view>
-    <selector class="selector" bind:selectFrequency="selectFrequency"></selector>
+    <image src="../../assets/error.png" class="error-icon" wx:if="{{showError}}"></image>
+    <view class="type-text">
+        <text>帖子类型：</text>
+    </view>
+    <selector class="selector-type" bind:selectWord="selectType" selectWords="{{types}}"
+              selectWordDefault="招聘信息"></selector>
+    <view wx:if="{{type === '招聘信息'}}">
+        <view class="time-text">
+            <text>招聘时间：</text>
+        </view>
+        <selector class="selector-time" bind:selectWord="selectFrequency" selectWords="{{frequencies}}"
+                  selectWordDefault="一个月内"></selector>
+    </view>
     <button class="finish" bindtap="sendCreate">
         <text>完成创建</text>
     </button>

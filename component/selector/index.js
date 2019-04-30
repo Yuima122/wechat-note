@@ -3,17 +3,30 @@ Component({
     /**
      * 组件的属性列表
      */
-    properties: {},
+    properties: {
+        selectWordDefault: {
+            value: '',
+            type: String,
+            observer: function (oldVal, newVal) {
+                if(oldVal !== newVal) {
+                    this.setData({
+                        selectWord: this.properties.selectWordDefault
+                    })
+                }
+            }
+        },
+        selectWords: {
+            value: [],
+            type: Array
+        }
+    },
 
     /**
      * 组件的初始数据
      */
     data: {
-        frequency: '每天一次',
         selectorShow: false,
-        frequencies: [
-            '每天一次', '两天一次', '每周一次'
-        ]
+        selectWord: ''
     },
 
     /**
@@ -29,10 +42,10 @@ Component({
         },
         selectFrequency(event) {
             this.setData({
-                frequency: this.data.frequencies[event.currentTarget.dataset.index],
+                selectWord: this.properties.selectWords[event.currentTarget.dataset.index],
                 selectorShow: false
             })
-            this.triggerEvent('selectFrequency', this.data.frequency)
+            this.triggerEvent('selectWord', this.data.selectWord)
         }
     }
 })

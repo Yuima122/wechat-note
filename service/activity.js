@@ -1,8 +1,9 @@
 import Request from '../utils/request'
+import environment from '../utils/environment'
 
 export default class Activity {
     constructor() {
-        this._baseUrl = 'https://www.weplann.cn/activity/';
+        this._baseUrl = environment.test + '/activity/';
         this._request = new Request();
         this._request.setErrorHandler(this.errorHander);
     }
@@ -16,7 +17,7 @@ export default class Activity {
     }
 
     get(activityId) {
-        return this._request.getRequest(this._baseUrl + activityId).then(res => res.data);
+        return this._request.getRequest(this._baseUrl + '?activityId=' + activityId).then(res => res.data);
     }
 
     delete(activityId) {

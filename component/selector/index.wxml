@@ -1,11 +1,11 @@
 <view class="container {{selectorShow ? 'selectorAnimation' : ''}}" bindtap="showSelector">
     <view class="frequency" wx:if="{{!selectorShow}}">
-        <text>{{frequency}}</text>
+        <text>{{selectWord}}</text>
     </view>
     <view class="selecte-frequency" wx:else>
-        <view wx:for="{{frequencies}}" wx:key="{{index}}" class="frequency-margin">
+        <view wx:for="{{selectWords}}" wx:key="{{index}}" class="frequency-margin">
             <text catchtap="selectFrequency" data-index="{{index}}">{{item}}</text>
-            <image class="selected-icon" src="../../assets/gou.png" wx:if="{{frequency === item}}"></image>
+            <image class="selected-icon" src="../../assets/gou.png" wx:if="{{selectWord === item}}"></image>
         </view>
     </view>
     <image class="selecte-icon" src="../../assets/sanjiao.png" wx:if="{{!selectorShow}}"></image>

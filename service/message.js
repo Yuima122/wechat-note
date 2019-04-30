@@ -1,8 +1,9 @@
 import Request from '../utils/request'
+import environment from '../utils/environment'
 
 export default class Message {
     constructor() {
-        this._baseUrl = 'https://www.weplann.cn/message/';
+        this._baseUrl = environment.test + '/message/';
         this._request = new Request();
         this._request.setErrorHandler(this.errorHander);
     }

@@ -1,7 +1,7 @@
 <view class="container" wx:if="{{showPage}}">
     <view class="authorize-container" wx:if="{{canIUse}}">
         <!--目前用的虚假商标，将被替换-->
-        <image src="../../assets/logo.jpg" class="logo"></image>
+        <image src="../../assets/LOGO.png" class="logo"></image>
         <!--产品名-->
         <view class="name-position">
             <text class="name">微计划</text>

@@ -1,6 +1,10 @@
 // pages/create-activity/index.js
 import Activity from '../../service/activity'
+import Map from '../../utils/map'
 
+const map = new Map();
+const frequencyMap = map.word2frequencyMap;
+const typeMap = map.word2TypeMap;
 const activity = new Activity()
 Page({
 
@@ -8,9 +12,14 @@ Page({
      * 页面的初始数据
      */
     data: {
-        frequency: '每天一次',
         name: '',
-        showError: false
+        showError: false,
+        types: ['招聘信息', '面试经验', '心得体会'],
+        frequencies: ['一个月内', '两个月内', '三个月内'],
+        type: '招聘信息',
+        frequency: '一个月内',
+        text: '',
+        word: '0/140'
     },
 
     /**
@@ -18,6 +27,12 @@ Page({
      */
     onLoad: function (options) {
 
+    },
+
+    selectType(event) {
+        this.setData({
+            type: event.detail
+        })
     },
 
     selectFrequency(event) {
@@ -32,6 +47,13 @@ Page({
         })
     },
 
+    watchTextareaInput(event) {
+       this.setData({
+           text: event.detail.value,
+           word: event.detail.value.length + '/' + '140'
+       })
+    },
+
     cancleError() {
        this.setData({
            showError: false
@@ -40,20 +62,16 @@ Page({
 
     sendCreate() {
         if (this.data.name) {
-            const frequencyMap = {
-                '每天一次': 0,
-                '两天一次': 1,
-                '每周一次': 2
-            }
             const activityInfo = {
                 name: this.data.name,
-                frequency: frequencyMap[this.data.frequency]
+                frequency: frequencyMap[this.data.frequency],
+                type: typeMap[this.data.type],
+                text: this.data.text
             }
             const data = {
                 openId: wx.getStorageSync('openId'),
                 activityInfo: activityInfo
             }
-            console.log(data);
             activity.create(data).then(() => {
                 wx.navigateTo({
                     url: '../finish-create/index'

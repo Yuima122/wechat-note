@@ -1,10 +1,9 @@
 import Request from '../utils/request'
 import environment from '../utils/environment'
 
-
-export default class Associate {
+export default class Recommend {
     constructor() {
-        this._baseUrl = environment.test + '/associate/';
+        this._baseUrl = environment.test + '/recommend/activity/';
         this._request = new Request();
         this._request.setErrorHandler(this.errorHander);
     }
@@ -13,7 +12,7 @@ export default class Associate {
         console.log(err);
     }
 
-    put(data) {
-        return this._request.putRequest(this._baseUrl, data).then(res => res.data);
+    get() {
+        return this._request.getRequest(this._baseUrl).then(res => res.data);
     }
 }
