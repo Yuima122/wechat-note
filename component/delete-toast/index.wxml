@@ -1,6 +1,6 @@
 <view class="container">
     <view class="toast-text">
-        <text>活动已删除~</text>
+        <text>帖子已删除~</text>
     </view>
     <view class="line">
         <image class="line-icon" src="../../assets/line.jpg"></image>
