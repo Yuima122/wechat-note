@@ -30,7 +30,7 @@
     <view class="menu-container" catchtap="showMenu">
         <image class="menu" src="../../assets/menu.png"></image>
     </view>
-    <pop-over activityId="{{activityId}}" openId="{{activity.openId}}"
+    <pop-over activityId="{{activityId}}" createrId="{{activity.createrId}}"
               wx:if="{{menuShow && showIndex === index}}"
               bind:delete="delete" class="pop-over-position"
               bind:closeMenu="closeMenu"></pop-over>

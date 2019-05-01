@@ -42,7 +42,8 @@ Component({
     data: {
         selfCheck: false,
         activity: {},
-        checked: 0
+        checked: 0,
+        hasChecked: false
     },
 
     attached() {
@@ -61,8 +62,9 @@ Component({
                 })
                 data.associates.forEach(associaty => {
                     if (associaty.openId === wx.getStorageSync('openId')) {
-                        Object.keys(associaty).forEach(key => {
-                            activity[key] = associaty[key];
+                        activity.checked = associaty.checked;
+                        this.setData({
+                            hasChecked: true
                         })
                     }
                 })
@@ -90,13 +92,23 @@ Component({
             }
             if (!this.data.activity.checked) {
                 data.checked = 1;
-                //post服务器 check 状态 1
-                associate.put(data).then(() => {
-                    this.data.activity.checked = 1;
-                    this.setData({
-                        checked: 1
+                if (this.data.hasChecked) {
+                    //post服务器 check 状态 1
+                    associate.put(data).then(() => {
+                        this.data.activity.checked = 1;
+                        this.setData({
+                            checked: 1
+                        })
                     })
-                })
+                } else {
+                    associate.create(data).then(() => {
+                        this.data.activity.checked = 1;
+                        this.setData({
+                            checked: 1,
+                            hasChecked: true
+                        })
+                    })
+                }
             } else {
                 //post服务器 check 状态 0
                 associate.put(data).then(() => {

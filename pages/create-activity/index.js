@@ -66,13 +66,10 @@ Page({
                 name: this.data.name,
                 frequency: frequencyMap[this.data.frequency],
                 type: typeMap[this.data.type],
-                text: this.data.text
+                text: this.data.text,
+                createrId: wx.getStorageSync('openId')
             }
-            const data = {
-                openId: wx.getStorageSync('openId'),
-                activityInfo: activityInfo
-            }
-            activity.create(data).then(() => {
+            activity.create(activityInfo).then(() => {
                 wx.navigateTo({
                     url: '../finish-create/index'
                 })

@@ -30,9 +30,9 @@
             还没有人留言哦，争做第一个吧~
         </text>
     </view>
-    <view class="black-message-btn" wx:if="{{!messages.length}}">
+    <view class="black-message-btn" bindtap="writeMessage" wx:if="{{!messages.length}}">
         <image class="black-btn-icon" src="../../assets/edit2.png"></image>
-        <view class="black-btn-text" bindtap="writeMessage">
+        <view class="black-btn-text">
             <text>留下感想</text>
         </view>
     </view>

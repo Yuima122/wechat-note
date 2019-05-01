@@ -34,6 +34,13 @@ Page({
             Object.keys(data.activityInfo).forEach(key => {
                 newActivity[key] = data.activityInfo[key];
             })
+            data.associates.forEach(associaty => {
+                if (associaty.openId === wx.getStorageSync('openId')) {
+                    Object.keys(associaty).forEach(key => {
+                        newActivity[key] = associaty[key];
+                    })
+                }
+            })
             newActivity.frequency = frequncyMap[newActivity.frequency];
             newActivity.type = typeMap[newActivity.type];
             this.setData({

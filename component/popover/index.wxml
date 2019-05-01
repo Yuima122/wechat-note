@@ -1,4 +1,4 @@
-<view class="container {{openId === userId ? '' : 'no-delete'}}">
+<view class="container {{createrId === userId ? '' : 'no-delete'}}">
     <view class="detail" catchtap="goToDetailPage">
         <image src="../../assets/detail.png" class="pop-over-icon"></image>
         <view class="pop-over-text">
@@ -11,7 +11,7 @@
             <text>分享帖子</text>
         </view>
     </view>
-    <view class="delete" catchtap="delete" wx:if="{{openId === userId}}">
+    <view class="delete" catchtap="delete" wx:if="{{createrId === userId}}">
         <image src="../../assets/delete.png" class="pop-over-icon"></image>
         <view class="pop-over-text">
             <text>删除帖子</text>

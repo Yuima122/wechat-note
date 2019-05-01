@@ -8,7 +8,7 @@ Component({
             type: String,
             value: null
         },
-        openId: {
+        createrId: {
             type: String,
             value: ''
         }

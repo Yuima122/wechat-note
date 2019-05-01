@@ -13,6 +13,10 @@ export default class Associate {
         console.log(err);
     }
 
+    create(data) {
+        return this._request.postRequest(this._baseUrl, data).then(res => res.data);
+    }
+
     put(data) {
         return this._request.putRequest(this._baseUrl, data).then(res => res.data);
     }
