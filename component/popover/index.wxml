@@ -7,9 +7,9 @@
     </view>
     <view class="invite">
         <image src="../../assets/invite2.png" class="pop-over-icon"></image>
-        <view class="pop-over-text">
+        <button class="pop-over-text default-btn" open-type="share">
             <text>分享帖子</text>
-        </view>
+        </button>
     </view>
     <view class="delete" catchtap="delete" wx:if="{{createrId === userId}}">
         <image src="../../assets/delete.png" class="pop-over-icon"></image>

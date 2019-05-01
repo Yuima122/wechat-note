@@ -135,6 +135,15 @@ Page({
         activity.delete(activityId).then(data => {
             console.log('删除的帖子：', data)
         });
+    },
+
+    onShareAppMessage(res) {
+        if (res.from === 'button') {
+            return {
+                title: '微计划为你带来更好的就业指南',
+                path: '/page/login/index'
+            }
+        }
     }
 
 })

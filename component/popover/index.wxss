@@ -51,3 +51,7 @@
     width: 40rpx;
     height: 40rpx;
 }
+.default-btn{
+    background: transparent;
+    padding: 0;
+}

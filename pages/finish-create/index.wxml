@@ -3,7 +3,7 @@
         <text>创建成功！</text>
     </view>
     <image class="complete" src="../../assets/complete-create.png"></image>
-    <button class="invite">
+    <button class="invite" open-type="share">
         <text>分享给好友</text>
     </button>
     <view class="cancel" bindtap="cancel">
