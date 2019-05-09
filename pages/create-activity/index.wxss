@@ -27,7 +27,7 @@ page{
 }
 .error-icon{
     position: absolute;
-    top: 76rpx;
+    top: 80rpx;
     left: 644rpx;
     width: 36rpx;
     height: 36rpx;
