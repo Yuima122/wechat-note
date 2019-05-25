@@ -3,7 +3,7 @@
            placeholder="{{showError ? ' 还没有输入招聘活动名称哦' : ' 输入招聘活动名称(必填)'}}" bindinput='watchInput'
            placeholder-class="{{showError ? 'error-placeholder' : ''}}" bindfocus="cancleError"/>
     <view class="input-detail-container">
-        <textarea class="input-detail" placeholder="输入相关描述" bindinput='watchTextareaInput'></textarea>
+        <textarea class="input-detail" placeholder="输入相关描述" bindinput='watchTextareaInput' maxlength="1000"></textarea>
         <text class="show-word">{{word}}</text>
     </view>
     <image src="../../assets/error.png" class="error-icon" wx:if="{{showError}}"></image>

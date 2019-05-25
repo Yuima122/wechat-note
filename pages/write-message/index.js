@@ -10,7 +10,7 @@ Page({
      */
     data: {
         text: '',
-        word: '0/140',
+        word: '0/1000',
         activityId: null
     },
 
@@ -26,7 +26,7 @@ Page({
     watchInput(event) {
         this.setData({
             text: event.detail.value,
-            word: event.detail.value.length + '/' + '140'
+            word: event.detail.value.length + '/' + '1000'
         })
     },
 

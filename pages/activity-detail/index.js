@@ -43,12 +43,18 @@ Page({
             })
             newActivity.frequency = frequncyMap[newActivity.frequency];
             newActivity.type = typeMap[newActivity.type];
+            newActivity.text = newActivity.text.replace(/\\n/gm,'\n');
             this.setData({
                 activity: newActivity
             })
             message.get(activityId).then(data => {
+                let messages = data.messages;
+                messages = messages.map(message => {
+                    message.text = message.text.replace(/\\n/gm,'\n');
+                    return message;
+                })
                 this.setData({
-                    messages: data.messages,
+                    messages: messages,
                     dataLoaded: true
                 })
             })

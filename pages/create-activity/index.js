@@ -19,7 +19,7 @@ Page({
         type: '招聘信息',
         frequency: '一个月内',
         text: '',
-        word: '0/140'
+        word: '0/1000'
     },
 
     /**
@@ -50,7 +50,7 @@ Page({
     watchTextareaInput(event) {
        this.setData({
            text: event.detail.value,
-           word: event.detail.value.length + '/' + '140'
+           word: event.detail.value.length + '/' + '1000'
        })
     },
 

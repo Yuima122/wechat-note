@@ -69,8 +69,8 @@ Component({
                     }
                 })
                 activity.groups = {
-                    urls: data.participants.map(participant => participant.avatarUrl),
-                    names: data.participants.map(participant => participant.nickName)
+                    urls: data.participants.filter(participant => participant.openId === data.activityInfo.createrId).map(participant => participant.avatarUrl),
+                    names: data.participants.filter(participant => participant.openId === data.activityInfo.createrId).map(participant => participant.nickName)
                 }
                 activity.frequency = frequencyMap[activity.frequency];
                 activity.type = typeMap[activity.type];

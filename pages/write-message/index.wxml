@@ -1,6 +1,6 @@
 <view class="container">
     <view class="message-input-contaienr">
-        <textarea class="message-input" placeholder="写下你的评论吧~" bindinput='watchInput'></textarea>
+        <textarea class="message-input" placeholder="写下你的评论吧~" bindinput='watchInput' maxlength="1000"></textarea>
         <view class="word-show">{{word}}</view>
     </view>
     <view class="complete" bindtap="createMessage">
