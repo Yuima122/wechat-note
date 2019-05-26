@@ -10,7 +10,14 @@ Component({
         },
         createrId: {
             type: String,
-            value: ''
+            value: '',
+            observer: function (oldVal, newVal) {
+                if(oldVal !== newVal) {
+                    this.setData({
+                        userId: wx.getStorageSync('openId')
+                    })
+                }
+            }
         }
     },
 
