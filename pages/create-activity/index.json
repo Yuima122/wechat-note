@@ -2,5 +2,5 @@
   "usingComponents": {
     "selector": "../../component/selector/index"
   },
-  "navigationBarTitleText": "创建活动"
+  "navigationBarTitleText": "创建帖子"
 }

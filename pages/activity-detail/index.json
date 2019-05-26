@@ -3,5 +3,5 @@
     "message": "../../component/message/index",
     "check-toast": "../../component/check-toast/index"
   },
-  "navigationBarTitleText": "活动记录"
+  "navigationBarTitleText": "帖子详情"
 }

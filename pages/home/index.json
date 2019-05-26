@@ -3,5 +3,5 @@
     "activity-card": "../../component/activity-card/index",
     "delete-toast": "../../component/delete-toast/index"
   },
-  "navigationBarTitleText": "我的活动"
+  "navigationBarTitleText": "主页"
 }
